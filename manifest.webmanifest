@@ -1,0 +1,19 @@
+{
+  "name": "環島七日｜竹東逆時針機車計畫",
+  "short_name": "環島七日",
+  "description": "七天六夜白牌機車環島行程、清單、預算與路況入口。",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f1e8",
+  "theme_color": "#174c43",
+  "icons": [
+    {
+      "src": "assets/icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

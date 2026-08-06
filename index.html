@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#174c43">
+  <meta name="description" content="新竹縣竹東鎮出發，七天六夜逆時針白牌機車環島行程、清單與預算工具。">
+  <title>環島七日｜竹東逆時針機車計畫</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/app-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">跳到主要內容</a>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">ZHUDONG · 7 DAYS · COUNTERCLOCKWISE</p>
+      <h1>環島七日</h1>
+    </div>
+    <div class="header-actions">
+      <span class="status" id="networkStatus" aria-live="polite">連線中</span>
+      <button class="icon-button" id="installButton" type="button" title="安裝到裝置" aria-label="安裝到裝置" hidden>
+        <span aria-hidden="true">↓</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <section class="route-overview" aria-labelledby="overviewTitle">
+      <div class="overview-copy">
+        <p class="section-kicker">白牌機車 · 7 天 6 夜</p>
+        <h2 id="overviewTitle">竹東出發，沿西岸南下，再從東岸回家。</h2>
+        <p>建議 2026/9/11（五）出發、9/17（四）返抵。南橫安排週一，避開週二至週四固定不開放時段；蘇花安排週三。全程約 1,100–1,310 公里。</p>
+        <div class="summary-row" aria-label="旅程摘要">
+          <span><b>6</b> 晚住宿</span>
+          <span><b>5–7</b> 小時／日</span>
+          <span><b>9/11–9/17</b> 建議日期</span>
+        </div>
+      </div>
+      <div class="route-visual" id="routeVisual" aria-label="南橫主線：竹東、嘉義、台南、寶來、台東、花蓮、羅東、竹東">
+        <svg viewBox="0 0 420 560" role="img" aria-labelledby="routeTitle routeDesc">
+          <title id="routeTitle">台灣逆時針環島路線示意</title>
+          <desc id="routeDesc">從新竹縣竹東鎮沿西部南下，經南橫到台東，再沿東岸北返。</desc>
+          <defs>
+            <marker id="routeArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0l10 5-10 5Z"/>
+            </marker>
+          </defs>
+          <path class="island" d="M100 328.8L115.6 343.3 113.4 345.2 124.9 378.2 124.4 388.6 134.6 399.1 128.4 399 145.1 407.2 166.8 428.8 174.4 475.4 177.5 477.2 180.4 472.2 191.1 480 195.2 462.7 194.3 426.1 203.6 397.1 225.7 370.8 233.8 355.1 251.5 325.2 257.4 300 272.9 219.5 277.4 213.3 274.1 203.6 279 197.3 279.4 189.4 291.1 175.5 294.2 159.5 301 153.5 298.4 149.6 302.5 146.8 303.6 138.5 298.7 131.1 297.1 108 304 95.8 317 86.4 308.8 83.7 307.8 71.5 296.6 72.5 291.4 68.1 287.8 71.4 289 68.2 281.8 64.3 283.4 60.5 280.1 62.3 274.3 52.9 265.2 50 244.2 67.7 232.7 72.6 210.4 84.5 197.3 107.1 195.5 119.8 175.7 137.7 156.3 175.6 149.7 176.4 155.2 177.8 149.4 186.3 147.6 193.3 143.4 194.3 137.6 202.3 132.5 215.6 127.9 230.1 123.9 231.7 126.3 235.7 114.9 238.7 114.1 244.8 114.2 291 109.1 297.4 105.6 310.4Z"/>
+          <g id="routeMainMap">
+            <g class="route-lines">
+              <path data-day="1" d="M216.2 121.2L146.1 279.9"/>
+              <path data-day="2" d="M146.1 279.9L116.5 341.8"/>
+              <path data-day="3" d="M116.5 341.8L174.9 326.6"/>
+              <path data-day="4" d="M174.9 326.6L222.2 371.5"/>
+              <path data-day="5" d="M222.2 371.5L272.9 216.5"/>
+              <path data-day="6" d="M272.9 216.5L290.5 128.7"/>
+              <path data-day="7" d="M290.5 128.7L216.2 121.2"/>
+            </g>
+            <g class="route-points">
+              <circle cx="216.2" cy="121.2" r="7"/><circle cx="146.1" cy="279.9" r="6"/><circle cx="116.5" cy="341.8" r="6"/>
+              <circle cx="174.9" cy="326.6" r="6"/><circle cx="222.2" cy="371.5" r="7"/><circle cx="272.9" cy="216.5" r="6"/><circle cx="290.5" cy="128.7" r="6"/>
+            </g>
+            <g class="route-labels">
+              <path d="M211 117L193 106"/><text x="159" y="106">竹東</text>
+              <path d="M142 279L124 274"/><text x="88" y="278">嘉義</text>
+              <path d="M112 342L94 346"/><text x="58" y="350">台南</text>
+              <path d="M178 323L189 312"/><text x="190" y="315">寶來</text>
+              <path d="M226 375L238 387"/><text x="240" y="392">台東</text>
+              <path d="M277 217L292 217"/><text x="295" y="221">花蓮</text>
+              <path d="M295 129L305 129"/><text x="308" y="133">羅東</text>
+            </g>
+            <g class="route-mileages">
+              <text x="153" y="193">230–260 km</text><text x="76" y="315">80–120</text><text x="137" y="351">120–150</text>
+              <text x="185" y="354">180–220</text><text x="258" y="301">180–200</text><text x="286" y="174">130–160</text><text x="246" y="112">170–200</text>
+            </g>
+          </g>
+          <g id="routeSouthLinkMap" hidden>
+            <g class="route-lines">
+              <path data-day="1" d="M216.2 121.2L146.1 279.9"/>
+              <path data-day="2" d="M146.1 279.9L116.5 341.8"/>
+              <path data-day="3" d="M116.5 341.8L161.5 420.7"/>
+              <path data-day="4" d="M161.5 420.7L222.2 371.5"/>
+              <path data-day="5" d="M222.2 371.5L272.9 216.5"/>
+              <path data-day="6" d="M272.9 216.5L290.5 128.7"/>
+              <path data-day="7" d="M290.5 128.7L216.2 121.2"/>
+            </g>
+            <g class="route-points">
+              <circle cx="216.2" cy="121.2" r="7"/><circle cx="146.1" cy="279.9" r="6"/><circle cx="116.5" cy="341.8" r="6"/>
+              <circle cx="161.5" cy="420.7" r="6"/><circle cx="222.2" cy="371.5" r="7"/><circle cx="272.9" cy="216.5" r="6"/><circle cx="290.5" cy="128.7" r="6"/>
+            </g>
+            <g class="route-labels">
+              <path d="M211 117L193 106"/><text x="159" y="106">竹東</text>
+              <path d="M142 279L124 274"/><text x="88" y="278">嘉義</text>
+              <path d="M112 342L94 346"/><text x="58" y="350">台南</text>
+              <path d="M157 421L137 425"/><text x="99" y="429">枋寮</text>
+              <path d="M226 375L238 387"/><text x="240" y="392">台東</text>
+              <path d="M277 217L292 217"/><text x="295" y="221">花蓮</text>
+              <path d="M295 129L305 129"/><text x="308" y="133">羅東</text>
+            </g>
+            <g class="route-mileages">
+              <text x="153" y="193">230–260 km</text><text x="76" y="315">80–120</text><text x="116" y="386">150–190</text>
+              <text x="180" y="414">110–140</text><text x="258" y="301">180–200</text><text x="286" y="174">130–160</text><text x="246" y="112">170–200</text>
+            </g>
+          </g>
+          <g class="route-status-legend" aria-label="路線狀態圖例">
+            <circle class="legend-current" cx="91" cy="526" r="5"/><text x="102" y="530">當天</text>
+            <circle class="legend-upcoming" cx="174" cy="526" r="5"/><text x="185" y="530">未走</text>
+            <circle class="legend-complete" cx="257" cy="526" r="5"/><text x="268" y="530">已完成</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="plan-selector" id="planSelector" aria-labelledby="planSelectorTitle">
+      <div>
+        <p class="section-kicker">路線應變</p>
+        <h2 id="planSelectorTitle">選擇通往台東的方案</h2>
+      </div>
+      <div class="plan-toggle" role="group" aria-label="選擇環島方案">
+        <button type="button" class="active" data-plan="main" aria-pressed="true">南橫主線</button>
+        <button type="button" data-plan="southLink" aria-pressed="false">南迴備案</button>
+      </div>
+      <p id="planSummary">D3 住寶來，D4 依放行時段穿越南橫前往台東。</p>
+    </section>
+
+    <nav class="day-tabs" id="dayTabs" aria-label="選擇行程天數"></nav>
+
+    <section class="view active" id="itineraryView" data-view="itinerary" aria-labelledby="dayTitle">
+      <div class="day-heading">
+        <div>
+          <p class="section-kicker" id="dayLabel"></p>
+          <h2 id="dayTitle"></h2>
+        </div>
+        <span class="risk-badge" id="riskBadge"></span>
+      </div>
+      <div class="day-facts" id="dayFacts"></div>
+      <div class="notice" id="dayNotice"></div>
+      <ol class="timeline" id="timeline"></ol>
+      <section class="daily-expense-section" aria-labelledby="dailyExpenseTitle">
+        <div class="section-heading">
+          <div><p class="section-kicker">當日支出</p><h3 id="dailyExpenseTitle">本日記帳</h3></div>
+          <strong id="dailyExpenseTotal">NT$0</strong>
+        </div>
+        <form class="expense-form" id="dailyExpenseForm">
+          <label>分類
+            <select name="category">
+              <option>住宿</option><option>油資</option><option>餐飲</option>
+              <option>景點／停車</option><option>維修</option><option>其他</option>
+            </select>
+          </label>
+          <label class="expense-name-field">項目
+            <input name="name" type="text" maxlength="40" placeholder="例：午餐" required>
+          </label>
+          <label>金額
+            <span class="expense-amount"><span>NT$</span><input name="amount" type="number" min="1" step="1" inputmode="numeric" placeholder="0" required></span>
+          </label>
+          <button class="expense-submit" type="submit">新增支出</button>
+        </form>
+        <div class="expense-list daily-expense-list" id="dailyExpenseList" aria-live="polite"></div>
+      </section>
+      <section class="food-section" id="foodSection" aria-label="沿途美食" hidden></section>
+      <section class="lodging-section" id="lodgingSection" aria-label="推薦住宿" hidden></section>
+      <section class="navigation-section" aria-labelledby="navigationTitle">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">分段導航</p>
+            <h3 id="navigationTitle">逐段開啟 Google Maps</h3>
+          </div>
+        </div>
+        <div class="navigation-links" id="navigationLinks"></div>
+        <p class="fine-print">Google Maps 的汽車建議路線不等於白牌機車合法路線。出發前請核對道路標誌、官方公告與現場管制。</p>
+      </section>
+      <section class="alternative" id="alternativeRoute" hidden></section>
+    </section>
+
+    <section class="view" id="checklistView" data-view="checklist" aria-labelledby="checklistTitle" hidden>
+      <div class="section-heading">
+        <div><p class="section-kicker">出發準備</p><h2 id="checklistTitle">行前檢查清單</h2></div>
+        <strong id="checklistProgress">0%</strong>
+      </div>
+      <div class="progress-track" aria-hidden="true"><span id="checklistBar"></span></div>
+      <div id="checklistGroups"></div>
+    </section>
+
+    <section class="view" id="budgetView" data-view="budget" aria-labelledby="budgetTitle" hidden>
+      <div class="section-heading">
+        <div><p class="section-kicker">七天加總</p><h2 id="budgetTitle">記帳總覽</h2></div>
+        <button class="text-button danger" id="resetExpenses" type="button">全部清除</button>
+      </div>
+      <p class="supporting">每日小計、分類小計與全部明細。新增支出請回到對應日期的行程頁。</p>
+      <h3 class="expense-summary-title">每日小計</h3>
+      <div class="expense-summary" id="expenseDaySummary" aria-label="每日支出小計"></div>
+      <h3 class="expense-summary-title">分類小計</h3>
+      <div class="expense-summary" id="expenseSummary" aria-label="支出分類小計"></div>
+      <div class="expense-list" id="expenseList" aria-live="polite"></div>
+      <div class="budget-total"><span>總支出</span><strong id="expenseTotal">NT$0</strong></div>
+    </section>
+
+    <section class="view" id="roadsView" data-view="roads" aria-labelledby="roadsTitle" hidden>
+      <div class="section-heading">
+        <div><p class="section-kicker">安全優先</p><h2 id="roadsTitle">天氣與道路確認</h2></div>
+      </div>
+      <div class="check-moments" aria-label="建議檢查時間">
+        <span>出發前 7 天</span><span>出發前 1 天</span><span>當日清晨</span>
+      </div>
+      <div class="official-links" id="officialLinks"></div>
+      <section class="safety-note">
+        <h3>山區不賭運氣</h3>
+        <p>9/11 是依南橫週二至週四不開放及逆時針行程倒推出的首選，不是天氣保證。豪雨、颱風、地震後落石或預警性封閉時，整趟改期或取消進入南橫與蘇花。</p>
+      </section>
+      <p class="fine-print">本機資料最後更新：<time id="lastUpdated"></time></p>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="主要功能">
+    <button type="button" class="active" data-target="itinerary" aria-current="page"><span aria-hidden="true">⌁</span>行程</button>
+    <button type="button" data-target="checklist"><span aria-hidden="true">✓</span>清單</button>
+    <button type="button" data-target="budget"><span aria-hidden="true">$</span>記帳</button>
+    <button type="button" data-target="roads"><span aria-hidden="true">!</span>路況</button>
+  </nav>
+  <script src="app.js" defer></script>
+</body>
+</html>

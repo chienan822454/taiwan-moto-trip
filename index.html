@@ -30,7 +30,7 @@
       <div class="overview-copy">
         <p class="section-kicker">白牌機車 · 7 天 6 夜</p>
         <h2 id="overviewTitle">竹東出發，沿西岸南下，再從東岸回家。</h2>
-        <p>建議 2026/9/11（五）出發、9/17（四）返抵。南橫安排週一，避開週二至週四固定不開放時段；蘇花安排週三。全程約 1,100–1,310 公里。</p>
+        <p>建議 2026/9/11（五）出發、9/17（四）返抵。南橫安排週一，但仍須依當日公告決定是否通行；蘇花安排週三。全程約 1,100–1,310 公里。</p>
         <div class="summary-row" aria-label="旅程摘要">
           <span><b>6</b> 晚住宿</span>
           <span><b>5–7</b> 小時／日</span>
@@ -136,8 +136,32 @@
       </div>
       <div class="day-facts" id="dayFacts"></div>
       <div class="notice" id="dayNotice"></div>
-      <ol class="timeline" id="timeline"></ol>
-      <section class="daily-expense-section" aria-labelledby="dailyExpenseTitle">
+      <aside class="fuel-alert" id="fuelAlert" aria-label="最後加油站" hidden></aside>
+      <section class="alternative" id="alternativeRoute" hidden></section>
+      <nav class="day-section-nav" aria-label="跳至本日內容">
+        <a href="#routePlanSection">今日路線</a>
+        <a href="#navigationSection">分段導航</a>
+        <a href="#dailyExpenseSection">本日記帳</a>
+      </nav>
+      <section class="timeline-section" id="routePlanSection" aria-labelledby="timelineTitle">
+        <div class="section-heading compact-heading">
+          <div><p class="section-kicker">今日路線</p><h3 id="timelineTitle">依序停靠與休息</h3></div>
+        </div>
+        <ol class="timeline" id="timeline"></ol>
+      </section>
+      <section class="navigation-section" id="navigationSection" aria-labelledby="navigationTitle">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">分段導航</p>
+            <h3 id="navigationTitle">逐段開啟 Google Maps</h3>
+          </div>
+        </div>
+        <div class="navigation-links" id="navigationLinks"></div>
+        <p class="fine-print">Google Maps 的汽車建議路線不等於白牌機車合法路線。出發前請核對道路標誌、官方公告與現場管制。</p>
+      </section>
+      <section class="lodging-section" id="lodgingSection" aria-label="推薦住宿" hidden></section>
+      <section class="food-section" id="foodSection" aria-label="沿途美食" hidden></section>
+      <section class="daily-expense-section" id="dailyExpenseSection" aria-labelledby="dailyExpenseTitle">
         <div class="section-heading">
           <div><p class="section-kicker">當日支出</p><h3 id="dailyExpenseTitle">本日記帳</h3></div>
           <strong id="dailyExpenseTotal">NT$0</strong>
@@ -159,19 +183,6 @@
         </form>
         <div class="expense-list daily-expense-list" id="dailyExpenseList" aria-live="polite"></div>
       </section>
-      <section class="food-section" id="foodSection" aria-label="沿途美食" hidden></section>
-      <section class="lodging-section" id="lodgingSection" aria-label="推薦住宿" hidden></section>
-      <section class="navigation-section" aria-labelledby="navigationTitle">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">分段導航</p>
-            <h3 id="navigationTitle">逐段開啟 Google Maps</h3>
-          </div>
-        </div>
-        <div class="navigation-links" id="navigationLinks"></div>
-        <p class="fine-print">Google Maps 的汽車建議路線不等於白牌機車合法路線。出發前請核對道路標誌、官方公告與現場管制。</p>
-      </section>
-      <section class="alternative" id="alternativeRoute" hidden></section>
     </section>
 
     <section class="view" id="checklistView" data-view="checklist" aria-labelledby="checklistTitle" hidden>
@@ -195,6 +206,18 @@
       <div class="expense-summary" id="expenseSummary" aria-label="支出分類小計"></div>
       <div class="expense-list" id="expenseList" aria-live="polite"></div>
       <div class="budget-total"><span>總支出</span><strong id="expenseTotal">NT$0</strong></div>
+      <section class="data-backup" aria-labelledby="dataBackupTitle">
+        <div>
+          <h3 id="dataBackupTitle">旅程資料備份</h3>
+          <p>保存記帳、行前清單與目前行程設定，換裝置時可還原。</p>
+        </div>
+        <div class="data-backup-actions">
+          <button class="backup-button" id="exportData" type="button">備份資料</button>
+          <label class="backup-button secondary" for="importData">還原資料</label>
+          <input id="importData" type="file" accept="application/json,.json" hidden>
+        </div>
+        <p class="backup-status" id="backupStatus" role="status" aria-live="polite"></p>
+      </section>
     </section>
 
     <section class="view" id="roadsView" data-view="roads" aria-labelledby="roadsTitle" hidden>
@@ -207,7 +230,7 @@
       <div class="official-links" id="officialLinks"></div>
       <section class="safety-note">
         <h3>山區不賭運氣</h3>
-        <p>9/11 是依南橫週二至週四不開放及逆時針行程倒推出的首選，不是天氣保證。豪雨、颱風、地震後落石或預警性封閉時，整趟改期或取消進入南橫與蘇花。</p>
+        <p>9/11 是依南橫管制與逆時針行程倒推出的首選，不是通行或天氣保證。豪雨、颱風、地震後落石或預警性封閉時，整趟改期或取消進入南橫與蘇花。</p>
       </section>
       <p class="fine-print">本機資料最後更新：<time id="lastUpdated"></time></p>
     </section>

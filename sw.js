@@ -1,4 +1,4 @@
-const CACHE_NAME = "taiwan-moto-trip-v16";
+const CACHE_NAME = "taiwan-moto-trip-v20";
 const APP_SHELL = [
   "./",
   "./index.html",

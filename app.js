@@ -2,7 +2,7 @@ const STORAGE_KEY = "taiwanMotoTrip.v1";
 
 const TRIP_DAYS = [
   {
-    day: 1, date: "9/11（五）", short: "嘉義", title: "竹東 → 嘉義", distance: "230–260 km", ride: "6–7 小時", stay: "嘉義市",
+    day: 1, date: "9/11（五）", short: "嘉義", title: "竹東 → 嘉義", distance: "230–260 km", ride: "6–7 小時", stay: "嘉義市", pace: "06:30 出發 · 17:00 前抵達",
     risk: "長距離", notice: "首日不追景點數量；每 60–90 分鐘下車活動，傍晚前抵達嘉義。",
     stops: [
       ["新竹縣竹東鎮", "早晨出發，確認胎壓、油量與雨具。"],
@@ -13,7 +13,7 @@ const TRIP_DAYS = [
     nav: [["竹東 → 鹿港", "新竹縣竹東鎮", "鹿港天后宮"], ["鹿港 → 嘉義", "鹿港天后宮", "嘉義文化路夜市"]]
   },
   {
-    day: 2, date: "9/12（六）", short: "台南", title: "嘉義 → 台南", distance: "80–120 km", ride: "2–3 小時", stay: "台南市",
+    day: 2, date: "9/12（六）", short: "台南", title: "嘉義 → 台南", distance: "80–120 km", ride: "2–3 小時", stay: "台南市", pace: "09:00 出發 · 下午保留休息",
     risk: "恢復日", notice: "刻意降低里程，留給老城、美食、車況檢查與身體恢復。",
     stops: [
       ["嘉義市", "早餐後慢慢出發，可先走一處人文景點。"],
@@ -24,8 +24,8 @@ const TRIP_DAYS = [
     nav: [["嘉義 → 台南", "嘉義文化路夜市", "台南孔廟"]]
   },
   {
-    day: 3, date: "9/13（日）", short: "寶來", title: "台南 → 寶來", distance: "120–150 km", ride: "4–5 小時", stay: "寶來／六龜",
-    risk: "入山前", notice: "入住前加滿油、買妥飲水與早餐，晚上再次確認南橫放行及淨空規定。",
+    day: 3, date: "9/13（日）", short: "寶來", title: "台南 → 寶來", distance: "120–150 km", ride: "4–5 小時", stay: "寶來／六龜", pace: "08:00 出發 · 16:00 前入住",
+    risk: "入山前", notice: "甲仙先補油，入住前買妥飲水與早餐；晚上再次確認南橫放行、淨空時間與梅蘭加油站隔日營業狀況。",
     stops: [
       ["台南", "早上完成車輛與裝備最後補充。"],
       ["新化／左鎮", "避開快速道路，沿台 20 線前進。"],
@@ -36,20 +36,22 @@ const TRIP_DAYS = [
     alternative: "若南橫確定封閉，今天不要進寶來，改走台南 → 枋寮住宿，隔日經台 9 線南迴前往台東。"
   },
   {
-    day: 4, date: "9/14（一）", short: "台東", title: "寶來 → 南橫 → 台東", distance: "180–220 km", ride: "6–7 小時", stay: "台東市",
-    risk: "全程控制點", notice: "南橫週二至週四不開放，本日安排週一通行；所有停留仍須服從當日放行及全線淨空時間。",
+    day: 4, date: "9/14（一）", short: "台東", title: "寶來 → 南橫 → 台東", distance: "180–220 km", ride: "6–7 小時", stay: "台東市", pace: "05:30 起床 · 依公告進管制點",
+    risk: "全程控制點", notice: "本日是否通行以公路局當日公告與現場管制為準；先確認進入、全線淨空時間，再決定是否離開寶來。",
+    fuelStop: { name: "梅蘭加油站", detail: "西進南橫最後加油站 · 06:00–20:00 · 92／95 無鉛 · 無 98；出發前再確認營業", query: "梅蘭加油站 高雄市桃源區" },
     stops: [
       ["寶來", "依官方時段提早出發，不摸黑進山。"],
+      ["梅蘭加油站", "油箱補滿後再進山；站點非 24 小時且無 98，勿把剩餘油量壓到極限。"],
       ["梅山口", "確認管制、油量、體力與煞車狀態。"],
       ["向陽／埡口周邊", "短停即可，不因拍照錯過淨空時間。"],
       ["池上／關山", "離開管制路段後再安排正餐與休息。"],
       ["台東市", "入住、檢查輪胎與煞車，早點休息。"]
     ],
-    nav: [["寶來 → 梅山口", "寶來溫泉區", "梅山遊客中心"], ["梅山口 → 池上", "梅山遊客中心", "池上車站"], ["池上 → 台東", "池上車站", "台東市"]],
+    nav: [["寶來 → 梅蘭加油站", "寶來溫泉區", "梅蘭加油站"], ["梅蘭 → 梅山口", "梅蘭加油站", "梅山遊客中心"], ["梅山口 → 池上", "梅山遊客中心", "池上車站"], ["池上 → 台東", "池上車站", "台東市"]],
     alternative: "南橫封閉備案：由枋寮出發，走台 9 線南迴至台東。不要在管制點等待、闖行或改走未確認的產業道路。"
   },
   {
-    day: 5, date: "9/15（二）", short: "花蓮", title: "台東 → 台 11 線 → 花蓮", distance: "180–200 km", ride: "5–6 小時", stay: "花蓮市",
+    day: 5, date: "9/15（二）", short: "花蓮", title: "台東 → 台 11 線 → 花蓮", distance: "180–200 km", ride: "5–6 小時", stay: "花蓮市", pace: "07:30 出發 · 17:00 前抵達",
     risk: "海岸側風", notice: "台 11 線午後可能有側風與短暫陣雨，停點以都蘭、三仙台、石梯坪為主。",
     stops: [
       ["台東市", "加滿油後沿台 11 線北上。"],
@@ -61,35 +63,36 @@ const TRIP_DAYS = [
     nav: [["台東 → 三仙台", "台東市", "三仙台遊憩區"], ["三仙台 → 花蓮", "三仙台遊憩區", "花蓮東大門夜市"]]
   },
   {
-    day: 6, date: "9/16（三）", short: "羅東", title: "花蓮 → 蘇花 → 羅東", distance: "130–160 km", ride: "4–6 小時", stay: "羅東",
+    day: 6, date: "9/16（三）", short: "羅東", title: "花蓮 → 蘇花 → 羅東", distance: "130–160 km", ride: "4–6 小時", stay: "羅東", pace: "06:00 查路況 · 06:30 決定出發",
     risk: "道路管制", notice: "清晨依公路局公告決定是否出發。白牌導航必須避開蘇花改、快速道路及其他禁行路段。",
     stops: [
       ["花蓮市", "清晨確認天氣、道路災阻與油量。"],
-      ["新城／崇德", "進入關鍵路段前再次確認路況。"],
-      ["南澳", "休息與補給，不在大型車旁久留。"],
+      ["新城／崇德", "進入關鍵路段前再次確認路況；未確認白牌可通行就不續行。"],
+      ["和平", "短停檢查油量、煞車與天候，保留返回花蓮的體力。"],
+      ["南澳", "完成關鍵路段後休息補給，不在大型車旁久留。"],
       ["南方澳", "離開蘇花路段後安排午餐。"],
       ["羅東", "入住後前往羅東夜市。"]
     ],
-    nav: [["花蓮 → 南澳", "花蓮市", "南澳車站"], ["南澳 → 羅東", "南澳車站", "羅東夜市"]],
+    nav: [["花蓮 → 崇德", "花蓮市", "崇德車站"], ["崇德 → 和平", "崇德車站", "和平車站"], ["和平 → 南澳", "和平車站", "南澳車站"], ["南澳 → 羅東", "南澳車站", "羅東夜市"]],
     alternative: "蘇花預警性封閉時不要等待闖行。優先延後一天並調整住宿；若日期完全不能延長，應在出發前依預報改期。"
   },
   {
-    day: 7, date: "9/17（四）", short: "竹東", title: "羅東 → 北宜 → 竹東", distance: "170–200 km", ride: "5–7 小時", stay: "回家",
+    day: 7, date: "9/17（四）", short: "竹東", title: "羅東 → 北宜 → 竹東", distance: "170–200 km", ride: "5–7 小時", stay: "回家", pace: "07:00 出發 · 避開通勤尖峰",
     risk: "返程疲勞", notice: "避開台北上下班尖峰與快速道路。疲勞時先停，不以預定返家時間壓縮休息。",
     stops: [
       ["羅東", "早餐後確認北宜天氣與煞車。"],
       ["坪林", "北宜公路中段休息，補充水分。"],
-      ["台北外圍", "依車流避開市中心與快速道路。"],
-      ["台 3 線", "選擇安全停點休息，不搶傍晚車流。"],
+      ["三峽", "繞開市中心與快速道路，確認後段續走台 3 線。"],
+      ["關西", "返家前最後休息，不搶傍晚車流。"],
       ["新竹縣竹東鎮", "傍晚前返抵，完成車輛巡檢。"]
     ],
-    nav: [["羅東 → 坪林", "羅東夜市", "坪林老街"], ["坪林 → 竹東", "坪林老街", "新竹縣竹東鎮"]]
+    nav: [["羅東 → 坪林", "羅東夜市", "坪林老街"], ["坪林 → 三峽", "坪林老街", "三峽老街"], ["三峽 → 關西", "三峽老街", "關西老街"], ["關西 → 竹東", "關西老街", "新竹縣竹東鎮"]]
   }
 ];
 
 const SOUTH_LINK_DAYS = TRIP_DAYS.map(day => ({ ...day }));
 SOUTH_LINK_DAYS[2] = {
-  day: 3, date: "9/13（日）", short: "枋寮", title: "台南 → 枋寮", distance: "150–190 km", ride: "4–5 小時", stay: "枋寮",
+  day: 3, date: "9/13（日）", short: "枋寮", title: "台南 → 枋寮", distance: "150–190 km", ride: "4–5 小時", stay: "枋寮", pace: "08:00 出發 · 16:00 前入住",
   risk: "南迴前一晚", notice: "確認南橫不開放後不要前往寶來，改沿西南部平地南下；入住前加滿油並確認南迴路況。",
   stops: [
     ["台南", "早餐後確認台 9 線南迴與東部天氣。"],
@@ -100,7 +103,7 @@ SOUTH_LINK_DAYS[2] = {
   nav: [["台南 → 東港", "台南孔廟", "東港華僑市場"], ["東港 → 枋寮", "東港華僑市場", "枋寮車站"]]
 };
 SOUTH_LINK_DAYS[3] = {
-  day: 4, date: "9/14（一）", short: "台東", title: "枋寮 → 南迴 → 台東", distance: "110–140 km", ride: "3–4 小時", stay: "台東市",
+  day: 4, date: "9/14（一）", short: "台東", title: "枋寮 → 南迴 → 台東", distance: "110–140 km", ride: "3–4 小時", stay: "台東市", pace: "07:00 查路況 · 07:30 出發",
   risk: "替代山路", notice: "走台 9 線南迴，不繞墾丁。南迴仍可能因豪雨、落石或事故管制，當日須再次確認官方路況。",
   stops: [
     ["枋寮", "清晨確認南迴路況、油量與雨具。"],
@@ -207,7 +210,7 @@ const CHECKLIST_GROUPS = [
   ["車況檢查", ["輪胎胎紋、胎壓與補胎工具", "前後煞車與煞車油", "機油、傳動與電瓶", "頭燈、方向燈與煞車燈"]],
   ["騎士裝備", ["全罩安全帽與手套", "兩截式雨衣與防水鞋套", "保暖層與替換衣物", "飲水、防曬與常用藥"]],
   ["證件與電子", ["駕照、行照、健保卡", "手機、充電線與行動電源", "緊急聯絡人與道路救援資料", "住宿資料與離線行程"]],
-  ["關鍵路段當日確認", ["南橫週二至週四不開放，另查當日放行與淨空時間", "蘇花災阻與施工管制", "豪雨、颱風與地震後道路警示", "白牌導航未進入禁行道路"]]
+  ["關鍵路段當日確認", ["南橫當日開放、進入與全線淨空時間", "蘇花災阻與施工管制", "豪雨、颱風與地震後道路警示", "白牌導航未進入禁行道路"]]
 ];
 
 const EXPENSE_CATEGORIES = ["住宿", "油資", "餐飲", "景點／停車", "維修", "其他"];
@@ -238,8 +241,47 @@ function saveState() {
   renderLastUpdated();
 }
 
+function setBackupStatus(message, isError = false) {
+  const status = document.getElementById("backupStatus");
+  status.textContent = message;
+  status.classList.toggle("error", isError);
+}
+
+function normalizeImportedState(data) {
+  const imported = data && typeof data === "object" && data.state && typeof data.state === "object" ? data.state : data;
+  if (!imported || typeof imported !== "object" || !Array.isArray(imported.expenses)) throw new Error("invalid-backup");
+
+  const expenses = imported.expenses.slice(0, 1000).map((expense, index) => {
+    const day = Number(expense.day);
+    const amount = Math.round(Number(expense.amount));
+    const name = String(expense.name || "").trim().slice(0, 40);
+    const category = String(expense.category || "");
+    if (day < 1 || day > EXPENSE_DAYS.length || amount < 1 || !name || !EXPENSE_CATEGORIES.includes(category)) return null;
+    return { id: String(expense.id || `import-${Date.now()}-${index}`), day, category, name, amount };
+  }).filter(Boolean);
+
+  const checks = imported.checks && typeof imported.checks === "object"
+    ? Object.fromEntries(Object.entries(imported.checks).map(([key, value]) => [key, Boolean(value)]))
+    : {};
+  const currentDay = Number(imported.currentDay);
+  return {
+    ...defaultState,
+    currentDay: currentDay >= 1 && currentDay <= EXPENSE_DAYS.length ? currentDay : 1,
+    currentPlan: Object.hasOwn(PLAN_DETAILS, imported.currentPlan) ? imported.currentPlan : "main",
+    checks,
+    expenses
+  };
+}
+
+function renderAllState() {
+  renderItinerary();
+  renderChecklist();
+  renderExpenses();
+  renderLastUpdated();
+}
+
 function mapsUrl(origin, destination) {
-  const params = new URLSearchParams({ api: "1", origin, destination, travelmode: "driving" });
+  const params = new URLSearchParams({ api: "1", origin, destination, travelmode: "driving", avoid: "highways" });
   return `https://www.google.com/maps/dir/?${params}`;
 }
 
@@ -303,9 +345,14 @@ function renderItinerary() {
   document.getElementById("dayTitle").textContent = day.title;
   document.getElementById("riskBadge").textContent = day.risk;
   document.getElementById("dayFacts").innerHTML = [
-    ["里程", day.distance], ["純騎乘", day.ride], ["住宿", day.stay]
+    ["里程", day.distance], ["純騎乘", day.ride], ["住宿", day.stay], ["建議節奏", day.pace]
   ].map(([label, value]) => `<div class="fact"><small>${label}</small><strong>${value}</strong></div>`).join("");
   document.getElementById("dayNotice").textContent = day.notice;
+  const fuelAlert = document.getElementById("fuelAlert");
+  fuelAlert.hidden = !day.fuelStop;
+  fuelAlert.innerHTML = day.fuelStop ? `
+    <div><small>最後補油點</small><strong>${day.fuelStop.name}</strong><span>${day.fuelStop.detail}</span></div>
+    <a href="${mapsSearchUrl(day.fuelStop.query)}" target="_blank" rel="noopener" class="external-link">開啟地圖 <b aria-hidden="true">↗</b></a>` : "";
   document.getElementById("timeline").innerHTML = day.stops.map(([name, detail]) => `<li><h3>${name}</h3><p>${detail}</p></li>`).join("");
   const foods = FOOD_GUIDES[`${state.currentPlan}:${day.short}`] || FOOD_GUIDES[day.short] || [];
   const foodSection = document.getElementById("foodSection");
@@ -341,7 +388,7 @@ function renderItinerary() {
     <p class="fine-print">價格與取消政策依預訂當下為準；下訂前另確認機車停放方式與最晚入住時間。</p>` : "";
   document.getElementById("navigationLinks").innerHTML = day.nav.map(([label, origin, destination]) => `
     <a class="nav-link external-link" href="${mapsUrl(origin, destination)}" target="_blank" rel="noopener">
-      <div><span>${label}</span><small>Google Maps · 需連線</small></div><b aria-hidden="true">↗</b>
+      <div><span>${label}</span><small>Google Maps · 避開高速道路 · 仍須核對禁行路段</small></div><b aria-hidden="true">↗</b>
     </a>`).join("");
   const alternative = document.getElementById("alternativeRoute");
   alternative.hidden = !day.alternative;
@@ -505,6 +552,34 @@ document.getElementById("resetExpenses").addEventListener("click", () => {
   state.expenses = [];
   saveState();
   renderExpenses();
+});
+document.getElementById("exportData").addEventListener("click", () => {
+  const backup = JSON.stringify({ app: "taiwan-moto-trip", version: 1, exportedAt: new Date().toISOString(), state }, null, 2);
+  const url = URL.createObjectURL(new Blob([backup], { type: "application/json" }));
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `taiwan-moto-trip-${new Date().toISOString().slice(0, 10)}.json`;
+  link.click();
+  URL.revokeObjectURL(url);
+  setBackupStatus("備份檔已下載，請保存在雲端或另一台裝置。 ");
+});
+document.getElementById("importData").addEventListener("change", async event => {
+  const input = event.currentTarget;
+  const file = input.files[0];
+  if (!file) return;
+  try {
+    if (file.size > 1024 * 1024) throw new Error("file-too-large");
+    const importedState = normalizeImportedState(JSON.parse(await file.text()));
+    if (!window.confirm(`將還原 ${importedState.expenses.length} 筆記帳資料，並取代目前資料。確定繼續？`)) return;
+    state = importedState;
+    saveState();
+    renderAllState();
+    setBackupStatus(`還原完成，共 ${state.expenses.length} 筆記帳資料。`);
+  } catch {
+    setBackupStatus("無法還原：請選擇由本網站下載的 JSON 備份檔。", true);
+  } finally {
+    input.value = "";
+  }
 });
 window.addEventListener("online", updateNetworkStatus);
 window.addEventListener("offline", updateNetworkStatus);

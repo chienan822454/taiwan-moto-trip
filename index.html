@@ -30,11 +30,11 @@
       <div class="overview-copy">
         <p class="section-kicker">白牌機車 · 7 天 6 夜</p>
         <h2 id="overviewTitle">竹東出發，沿西岸南下，再從東岸回家。</h2>
-        <p>建議 2026/9/11（五）出發、9/17（四）返抵。南橫安排週一，但仍須依當日公告決定是否通行；蘇花安排週三。全程約 1,100–1,310 公里。</p>
+        <p id="overviewDescription">建議 2026/9/11（五）出發、9/17（四）返抵。南橫安排週一，但仍須依當日公告決定是否通行；蘇花安排週三。全程約 1,100–1,310 公里。</p>
         <div class="summary-row" aria-label="旅程摘要">
           <span><b>6</b> 晚住宿</span>
           <span><b>5–7</b> 小時／日</span>
-          <span><b>9/11–9/17</b> 建議日期</span>
+          <span><b id="overviewDateRange">9/11–9/17</b> 建議日期</span>
         </div>
       </div>
       <div class="route-visual" id="routeVisual" aria-label="南橫主線：竹東、嘉義、台南、寶來、台東、花蓮、羅東、竹東">
@@ -103,6 +103,33 @@
               <text x="180" y="414">110–140</text><text x="258" y="301">180–200</text><text x="286" y="174">130–160</text><text x="246" y="112">170–200</text>
             </g>
           </g>
+          <g id="routeThursdayMap" hidden>
+            <g class="route-lines">
+              <path data-day="1" d="M216.2 121.2L146.1 279.9"/>
+              <path data-day="2" d="M146.1 279.9L174.9 326.6"/>
+              <path data-day="3" d="M174.9 326.6L222.2 371.5"/>
+              <path data-day="4" d="M222.2 371.5L272.9 216.5"/>
+              <path data-day="5" d="M272.9 216.5C292 202 295 230 272.9 216.5"/>
+              <path data-day="6" d="M272.9 216.5L290.5 128.7"/>
+              <path data-day="7" d="M290.5 128.7L216.2 121.2"/>
+            </g>
+            <g class="route-points">
+              <circle cx="216.2" cy="121.2" r="7"/><circle cx="146.1" cy="279.9" r="6"/><circle cx="174.9" cy="326.6" r="6"/>
+              <circle cx="222.2" cy="371.5" r="7"/><circle cx="272.9" cy="216.5" r="6"/><circle cx="290.5" cy="128.7" r="6"/>
+            </g>
+            <g class="route-labels">
+              <path d="M211 117L193 106"/><text x="159" y="106">竹東</text>
+              <path d="M142 279L124 274"/><text x="88" y="278">嘉義</text>
+              <path d="M178 323L189 312"/><text x="190" y="315">寶來</text>
+              <path d="M226 375L238 387"/><text x="240" y="392">台東</text>
+              <path d="M277 217L292 217"/><text x="295" y="221">花蓮</text>
+              <path d="M295 129L305 129"/><text x="308" y="133">羅東</text>
+            </g>
+            <g class="route-mileages">
+              <text x="153" y="193">230–260 km</text><text x="142" y="305">約 101</text><text x="185" y="354">180–220</text>
+              <text x="258" y="301">180–200</text><text x="294" y="242">0–60</text><text x="286" y="174">130–160</text><text x="246" y="112">170–200</text>
+            </g>
+          </g>
           <g class="route-status-legend" aria-label="路線狀態圖例">
             <circle class="legend-current" cx="91" cy="526" r="5"/><text x="102" y="530">當天</text>
             <circle class="legend-upcoming" cx="174" cy="526" r="5"/><text x="185" y="530">未走</text>
@@ -115,11 +142,12 @@
     <section class="plan-selector" id="planSelector" aria-labelledby="planSelectorTitle">
       <div>
         <p class="section-kicker">路線應變</p>
-        <h2 id="planSelectorTitle">選擇通往台東的方案</h2>
+        <h2 id="planSelectorTitle">選擇七日行程方案</h2>
       </div>
       <div class="plan-toggle" role="group" aria-label="選擇環島方案">
         <button type="button" class="active" data-plan="main" aria-pressed="true">南橫主線</button>
         <button type="button" data-plan="southLink" aria-pressed="false">南迴備案</button>
+        <button type="button" data-plan="thursday" aria-pressed="false">週四精簡版</button>
       </div>
       <p id="planSummary">D3 住寶來，D4 依放行時段穿越南橫前往台東。</p>
     </section>
@@ -230,7 +258,7 @@
       <div class="official-links" id="officialLinks"></div>
       <section class="safety-note">
         <h3>山區不賭運氣</h3>
-        <p>9/11 是依南橫管制與逆時針行程倒推出的首選，不是通行或天氣保證。豪雨、颱風、地震後落石或預警性封閉時，整趟改期或取消進入南橫與蘇花。</p>
+        <p>建議日期是依南橫管制與逆時針行程倒推出的選項，不是通行或天氣保證。豪雨、颱風、地震後落石或預警性封閉時，整趟改期或取消進入南橫與蘇花。</p>
       </section>
       <p class="fine-print">本機資料最後更新：<time id="lastUpdated"></time></p>
     </section>

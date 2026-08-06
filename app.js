@@ -90,6 +90,43 @@ const TRIP_DAYS = [
   }
 ];
 
+const THURSDAY_DAYS = [
+  { ...TRIP_DAYS[0], date: "9/17（四）" },
+  {
+    day: 2, date: "9/18（五）", short: "寶來", title: "嘉義 → 甲仙 → 寶來", distance: "約 101 km", ride: "3–3.5 小時", stay: "寶來／六龜", pace: "09:00 出發 · 15:00–16:00 抵達",
+    risk: "入山前", notice: "甲仙完成午餐、補油，並買妥隔日早餐、飲水與乾糧；寶來晚餐選擇不多，入住前先確認旅宿或餐廳供餐。",
+    stops: [
+      ["嘉義市", "早餐後出發，避開快速道路並確認山區天候。"],
+      ["新營／玉井", "途中短休與補水，不額外繞進市區景點。"],
+      ["甲仙", "午餐、加油，買妥隔日早餐、飲水與乾糧。"],
+      ["寶來／六龜", "15:00–16:00 入住；17:30 前確認晚餐，晚上再查南橫公告與梅蘭加油站營業狀況。"]
+    ],
+    nav: [["嘉義 → 玉井", "嘉義文化路夜市", "玉井區"], ["玉井 → 甲仙", "玉井區", "甲仙區"], ["甲仙 → 寶來", "甲仙區", "寶來溫泉區"]],
+    alternative: "若南橫確定封閉，不進寶來；由嘉義改往枋寮住宿，隔日經台 9 線南迴前往台東。"
+  },
+  {
+    ...TRIP_DAYS[3],
+    day: 3,
+    date: "9/19（六）",
+    alternative: "南橫封閉時改採嘉義 → 枋寮、隔日走台 9 線南迴至台東；不要在管制點等待、闖行或改走未確認的產業道路。"
+  },
+  { ...TRIP_DAYS[4], day: 4, date: "9/20（日）" },
+  {
+    day: 5, date: "9/21（一）", short: "花蓮", title: "花蓮機動／休息日", distance: "0–60 km", ride: "0–2 小時", stay: "花蓮市", pace: "不設鬧鐘 · 依體力與天候安排",
+    risk: "恢復日", notice: "優先休息、洗衣與檢查車況；若前段受天候或管制延誤，本日作為緩衝，不為補景點再次拉長里程。",
+    stops: [
+      ["花蓮市", "睡眠、洗衣並檢查輪胎、煞車、機油與行李固定。"],
+      ["七星潭／新城", "體力與天氣都適合才安排短程，不進入蘇花關鍵路段。"],
+      ["市區補給", "補齊返程用品，下午確認隔日蘇花路況與住宿。"],
+      ["花蓮市", "連住同一處，提早休息，不搬運行李。"]
+    ],
+    nav: [["花蓮市 → 七星潭", "花蓮市", "七星潭風景區"], ["七星潭 → 花蓮市", "七星潭風景區", "花蓮市"]],
+    alternative: "若前段行程延誤，直接使用本日補回進度；若蘇花預報不佳，保留續住花蓮或調整返程方式的彈性。"
+  },
+  { ...TRIP_DAYS[5], day: 6, date: "9/22（二）" },
+  { ...TRIP_DAYS[6], day: 7, date: "9/23（三）" }
+];
+
 const SOUTH_LINK_DAYS = TRIP_DAYS.map(day => ({ ...day }));
 SOUTH_LINK_DAYS[2] = {
   day: 3, date: "9/13（日）", short: "枋寮", title: "台南 → 枋寮", distance: "150–190 km", ride: "4–5 小時", stay: "枋寮", pace: "08:00 出發 · 16:00 前入住",
@@ -119,12 +156,23 @@ const PLAN_DETAILS = {
   main: {
     label: "南橫主線",
     summary: "D3 住寶來，D4 依放行時段穿越南橫前往台東。",
+    overview: "建議 2026/9/11（五）出發、9/17（四）返抵。南橫安排週一，但仍須依當日公告決定是否通行；蘇花安排週三。全程約 1,100–1,310 公里。",
+    dateRange: "9/11–9/17",
     days: TRIP_DAYS
   },
   southLink: {
     label: "南迴備案",
     summary: "南橫不開放時，D3 改住枋寮，D4 經台 9 線南迴前往台東。",
+    overview: "建議 2026/9/11（五）出發、9/17（四）返抵。南橫不開放時改走南迴，蘇花仍安排週三；全程依當日路況調整。",
+    dateRange: "9/11–9/17",
     days: SOUTH_LINK_DAYS
+  },
+  thursday: {
+    label: "週四精簡版",
+    summary: "9/17 週四出發（農曆八月初七），取消台南住宿；D2 嘉義直達寶來，D5 留在花蓮作為機動／休息日。",
+    overview: "建議 2026/9/17（四）出發、9/23（三）返抵，已避開農曆七月。取消台南住宿，嘉義直達寶來；花蓮保留一天機動與休息。全程約 1,020–1,240 公里。",
+    dateRange: "9/17–9/23",
+    days: THURSDAY_DAYS
   }
 };
 
@@ -182,6 +230,12 @@ const FOOD_GUIDES = {
     { name: "太麻里釋迦冰", place: "太麻里", note: "短暫降溫休息，依季節與店家供應為準。", query: "太麻里 釋迦冰" },
     { name: "台東米苔目", place: "台東市", note: "中午後抵達，可避開正餐尖峰再進市區。", query: "台東市 米苔目" },
     { name: "卑南豬血湯", place: "台東市", note: "抵達後想吃熱食可選，與米苔目擇一。", query: "台東市 卑南豬血湯" }
+  ],
+  "thursday:day5": [
+    { name: "花蓮扁食", place: "花蓮市", note: "休息日可選步行可達的店，不必再騎車追名店。", query: "花蓮市 扁食" },
+    { name: "公正包子", place: "花蓮市", note: "適合作為簡單補給，現場人多時改選附近店家。", query: "花蓮 公正包子" },
+    { name: "剝皮辣椒料理", place: "花蓮市", note: "正餐可選在地風味，熱門店先確認候位狀況。", query: "花蓮 剝皮辣椒 餐廳" },
+    { name: "東大門夜市", place: "花蓮市", note: "依體力散步用餐，油炸與生食適量即可。", query: "花蓮東大門夜市" }
   ],
   "花蓮": [
     { name: "都蘭包子", place: "都蘭", note: "離開台東後的早段補給，方便帶著走。", query: "都蘭 包子" },
@@ -294,6 +348,10 @@ function activePlan() {
   return PLAN_DETAILS[state.currentPlan] || PLAN_DETAILS.main;
 }
 
+function activeExpenseDays() {
+  return activePlan().days.map(day => `DAY ${day.day} · ${day.date.split("（")[0]}`);
+}
+
 function renderPlanSelector() {
   const plan = activePlan();
   document.querySelectorAll("[data-plan]").forEach(button => {
@@ -302,15 +360,19 @@ function renderPlanSelector() {
     button.setAttribute("aria-pressed", String(active));
   });
   document.getElementById("planSummary").textContent = plan.summary;
-  const backup = state.currentPlan === "southLink";
-  document.getElementById("routeMainMap").toggleAttribute("hidden", backup);
-  document.getElementById("routeSouthLinkMap").toggleAttribute("hidden", !backup);
-  document.getElementById("routeVisual").setAttribute("aria-label", backup
-    ? "南迴備案：竹東、嘉義、台南、枋寮、台東、花蓮、羅東、竹東，各段附里程"
-    : "南橫主線：竹東、嘉義、台南、寶來、台東、花蓮、羅東、竹東，各段附里程");
-  document.getElementById("routeDesc").textContent = backup
-    ? "從竹東沿西部南下，經枋寮與台九線南迴到台東，再沿東岸北返；紅色為當天、藍色為未走、灰色為已完成。"
-    : "從竹東沿西部南下，經寶來與南橫到台東，再沿東岸北返；紅色為當天、藍色為未走、灰色為已完成。";
+  document.getElementById("overviewDescription").textContent = plan.overview;
+  document.getElementById("overviewDateRange").textContent = plan.dateRange;
+  const mapDetails = {
+    main: ["routeMainMap", "南橫主線：竹東、嘉義、台南、寶來、台東、花蓮、羅東、竹東，各段附里程", "從竹東沿西部南下，經寶來與南橫到台東，再沿東岸北返"],
+    southLink: ["routeSouthLinkMap", "南迴備案：竹東、嘉義、台南、枋寮、台東、花蓮、羅東、竹東，各段附里程", "從竹東沿西部南下，經枋寮與台九線南迴到台東，再沿東岸北返"],
+    thursday: ["routeThursdayMap", "週四精簡版：竹東、嘉義、寶來、台東、花蓮、羅東、竹東，各段附里程", "從竹東經嘉義直達寶來，穿越南橫到台東，並在花蓮保留一個機動日後北返"]
+  };
+  const [activeMap, ariaLabel, description] = mapDetails[state.currentPlan] || mapDetails.main;
+  ["routeMainMap", "routeSouthLinkMap", "routeThursdayMap"].forEach(id => {
+    document.getElementById(id).toggleAttribute("hidden", id !== activeMap);
+  });
+  document.getElementById("routeVisual").setAttribute("aria-label", ariaLabel);
+  document.getElementById("routeDesc").textContent = `${description}；紅色為當天、藍色為未走、灰色為已完成。`;
   updateRouteProgress();
 }
 
@@ -354,7 +416,7 @@ function renderItinerary() {
     <div><small>最後補油點</small><strong>${day.fuelStop.name}</strong><span>${day.fuelStop.detail}</span></div>
     <a href="${mapsSearchUrl(day.fuelStop.query)}" target="_blank" rel="noopener" class="external-link">開啟地圖 <b aria-hidden="true">↗</b></a>` : "";
   document.getElementById("timeline").innerHTML = day.stops.map(([name, detail]) => `<li><h3>${name}</h3><p>${detail}</p></li>`).join("");
-  const foods = FOOD_GUIDES[`${state.currentPlan}:${day.short}`] || FOOD_GUIDES[day.short] || [];
+  const foods = FOOD_GUIDES[`${state.currentPlan}:day${day.day}`] || FOOD_GUIDES[`${state.currentPlan}:${day.short}`] || FOOD_GUIDES[day.short] || [];
   const foodSection = document.getElementById("foodSection");
   foodSection.hidden = foods.length === 0;
   foodSection.innerHTML = foods.length ? `
@@ -430,9 +492,10 @@ function escapeHtml(value) {
 }
 
 function expenseItemsMarkup(expenses, showDay) {
+  const expenseDays = activeExpenseDays();
   return expenses.length ? expenses.map(expense => `
     <article class="expense-item">
-      <div><span>${showDay ? `${EXPENSE_DAYS[expense.day - 1] || "未指定日期"} · ` : ""}${escapeHtml(expense.category)}</span><strong>${escapeHtml(expense.name)}</strong></div>
+      <div><span>${showDay ? `${expenseDays[expense.day - 1] || "未指定日期"} · ` : ""}${escapeHtml(expense.category)}</span><strong>${escapeHtml(expense.name)}</strong></div>
       <div class="expense-item-actions"><strong>NT$${Number(expense.amount).toLocaleString("zh-TW")}</strong><button type="button" data-expense-id="${expense.id}" title="刪除支出" aria-label="刪除 ${escapeHtml(expense.name)}">×</button></div>
     </article>`).join("") : `<p class="empty-state">尚無支出。</p>`;
 }
@@ -448,7 +511,7 @@ function bindExpenseDeleteButtons(root) {
 function renderDailyExpenses() {
   if (!Array.isArray(state.expenses)) state.expenses = [];
   const dayExpenses = state.expenses.filter(expense => Number(expense.day) === state.currentDay);
-  document.getElementById("dailyExpenseTitle").textContent = `${EXPENSE_DAYS[state.currentDay - 1]} 記帳`;
+  document.getElementById("dailyExpenseTitle").textContent = `${activeExpenseDays()[state.currentDay - 1]} 記帳`;
   const root = document.getElementById("dailyExpenseList");
   root.innerHTML = expenseItemsMarkup(dayExpenses, false);
   bindExpenseDeleteButtons(root);
@@ -458,13 +521,14 @@ function renderDailyExpenses() {
 
 function renderExpenseOverview() {
   if (!Array.isArray(state.expenses)) state.expenses = [];
+  const expenseDays = activeExpenseDays();
   const categoryTotals = Object.fromEntries(EXPENSE_CATEGORIES.map(category => [category, 0]));
-  const dayTotals = EXPENSE_DAYS.map(() => 0);
+  const dayTotals = expenseDays.map(() => 0);
   state.expenses.forEach(expense => {
     if (categoryTotals[expense.category] !== undefined) categoryTotals[expense.category] += Number(expense.amount) || 0;
     if (dayTotals[expense.day - 1] !== undefined) dayTotals[expense.day - 1] += Number(expense.amount) || 0;
   });
-  document.getElementById("expenseDaySummary").innerHTML = EXPENSE_DAYS.map((label, index) => `
+  document.getElementById("expenseDaySummary").innerHTML = expenseDays.map((label, index) => `
     <span><small>${label}</small><strong>NT$${dayTotals[index].toLocaleString("zh-TW")}</strong></span>`).join("");
   const summary = document.getElementById("expenseSummary");
   summary.innerHTML = EXPENSE_CATEGORIES
@@ -528,6 +592,7 @@ document.querySelectorAll("[data-plan]").forEach(button => button.addEventListen
   state.currentPlan = button.dataset.plan;
   saveState();
   renderItinerary();
+  renderExpenseOverview();
 }));
 document.getElementById("dailyExpenseForm").addEventListener("submit", event => {
   event.preventDefault();

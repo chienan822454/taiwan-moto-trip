@@ -92,7 +92,7 @@ main { width: min(1120px, 100%); margin: 0 auto; padding: 0 clamp(18px, 4vw, 32p
 .plan-selector { padding: 24px 0 14px; border-bottom: 1px solid var(--line); }
 .plan-selector h2 { margin-bottom: 14px; font-size: 1.35rem; }
 .plan-selector > p:last-child { margin: 10px 0 0; color: var(--muted); font-size: .82rem; }
-.plan-toggle { display: grid; grid-template-columns: repeat(2, minmax(0, 180px)); gap: 8px; }
+.plan-toggle { display: grid; grid-template-columns: repeat(3, minmax(0, 180px)); gap: 8px; }
 .plan-toggle button { min-height: 46px; padding: 8px 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--muted); cursor: pointer; font-weight: 800; }
 .plan-toggle button.active { border-color: var(--forest); background: var(--forest); color: white; }
 
@@ -243,7 +243,8 @@ main { width: min(1120px, 100%); margin: 0 auto; padding: 0 clamp(18px, 4vw, 32p
 }
 
 @media (max-width: 420px) {
-  .plan-toggle { grid-template-columns: 1fr 1fr; }
+  .plan-toggle { grid-template-columns: repeat(3, 1fr); }
+  .plan-toggle button { padding-inline: 6px; font-size: .82rem; }
   .day-facts { grid-template-columns: 1fr; }
   .fact:nth-child(2) { border-bottom: 1px solid var(--line); }
   .fact { display: flex; justify-content: space-between; border-right: 0; border-bottom: 1px solid var(--line); }

@@ -1,4 +1,4 @@
-const STORAGE_KEY = "taiwanMotoTrip.v1";
+const STORAGE_KEY = "zhudongTrip20260916.v1";
 
 const TRIP_DAYS = [
   {
@@ -90,29 +90,38 @@ const TRIP_DAYS = [
   }
 ];
 
-const THURSDAY_DAYS = [
-  { ...TRIP_DAYS[0], date: "9/17（四）" },
+const SEPTEMBER_DAYS = [
+  { ...TRIP_DAYS[0], date: "9/16（三）" },
   {
-    day: 2, date: "9/18（五）", short: "寶來", title: "嘉義 → 甲仙 → 寶來", distance: "約 101 km", ride: "3–3.5 小時", stay: "寶來／六龜", pace: "09:00 出發 · 15:00–16:00 抵達",
-    risk: "入山前", notice: "甲仙完成午餐、補油，並買妥隔日早餐、飲水與乾糧；寶來晚餐選擇不多，入住前先確認旅宿或餐廳供餐。",
+    day: 2, date: "9/17（四）", short: "旗山", title: "嘉義 → 玉井 → 旗山", distance: "110–140 km", ride: "3–4 小時", stay: "旗山", pace: "08:30 出發 · 15:30 前抵達",
+    risk: "山路暖身", notice: "沿台 3 線與台 20 線移動，避開快速道路；抵達旗山後完成補給，晚上確認南橫管制與天候。",
     stops: [
-      ["嘉義市", "早餐後出發，避開快速道路並確認山區天候。"],
-      ["新營／玉井", "途中短休與補水，不額外繞進市區景點。"],
-      ["甲仙", "午餐、加油，買妥隔日早餐、飲水與乾糧。"],
-      ["寶來／六龜", "15:00–16:00 入住；17:30 前確認晚餐，晚上再查南橫公告與梅蘭加油站營業狀況。"]
+      ["嘉義市", "早餐後出發，確認油量與山區天候。"],
+      ["中埔／大埔", "沿台 3 線南下，視體力短休補水。"],
+      ["玉井", "午餐與加油，不為景點延誤抵達時間。"],
+      ["旗山", "入住後補齊隔日早餐、飲水與乾糧，確認南橫公告。"]
     ],
-    nav: [["嘉義 → 玉井", "嘉義文化路夜市", "玉井區"], ["玉井 → 甲仙", "玉井區", "甲仙區"], ["甲仙 → 寶來", "甲仙區", "寶來溫泉區"]],
-    alternative: "若南橫確定封閉，不進寶來；由嘉義改往枋寮住宿，隔日經台 9 線南迴前往台東。"
+    nav: [["嘉義 → 大埔", "嘉義文化路夜市", "大埔情人公園"], ["大埔 → 玉井", "大埔情人公園", "玉井區"], ["玉井 → 旗山", "玉井區", "旗山老街"]],
+    alternative: "若隔日南橫確定封閉，從旗山改往枋寮，再經台 9 線南迴前往台東；同步調整台東住宿。"
   },
   {
-    ...TRIP_DAYS[3],
-    day: 3,
-    date: "9/19（六）",
-    alternative: "南橫封閉時改採嘉義 → 枋寮、隔日走台 9 線南迴至台東；不要在管制點等待、闖行或改走未確認的產業道路。"
+    day: 3, date: "9/18（五）", short: "台東", title: "旗山 → 南橫 → 台東", distance: "200–230 km", ride: "6–8 小時", stay: "台東市", pace: "05:30 起床 · 依公告進管制點",
+    risk: "全程控制點", notice: "本日是否通行以公路局當日公告與現場管制為準；出發前先確認進入、全線淨空時間與梅蘭加油站營業。",
+    fuelStop: { ...TRIP_DAYS[3].fuelStop },
+    stops: [
+      ["旗山", "提早出發，沿台 29 線前往甲仙，不摸黑進山。"],
+      ["甲仙", "補油並再次確認南橫放行狀況。"],
+      ["梅蘭加油站", "油箱補滿後再進山；站點非 24 小時且無 98。"],
+      ["梅山口", "確認管制、油量、體力與煞車狀態。"],
+      ["池上／關山", "離開管制路段後再安排正餐與休息。"],
+      ["台東市", "入住、檢查輪胎與煞車，早點休息。"]
+    ],
+    nav: [["旗山 → 甲仙", "旗山老街", "甲仙區"], ["甲仙 → 梅蘭", "甲仙區", "梅蘭加油站"], ["梅蘭 → 池上", "梅蘭加油站", "池上車站"], ["池上 → 台東", "池上車站", "台東市"]],
+    alternative: "南橫封閉時不要等待或闖行；改由旗山往枋寮住宿，隔日經台 9 線南迴至台東，並取消或縮短花蓮休息日。"
   },
-  { ...TRIP_DAYS[4], day: 4, date: "9/20（日）" },
+  { ...TRIP_DAYS[4], day: 4, date: "9/19（六）" },
   {
-    day: 5, date: "9/21（一）", short: "花蓮", title: "花蓮機動／休息日", distance: "0–60 km", ride: "0–2 小時", stay: "花蓮市", pace: "不設鬧鐘 · 依體力與天候安排",
+    day: 5, date: "9/20（日）", short: "花蓮", title: "花蓮機動／休息日", distance: "0–60 km", ride: "0–2 小時", stay: "花蓮市", pace: "不設鬧鐘 · 依體力與天候安排",
     risk: "恢復日", notice: "優先休息、洗衣與檢查車況；若前段受天候或管制延誤，本日作為緩衝，不為補景點再次拉長里程。",
     stops: [
       ["花蓮市", "睡眠、洗衣並檢查輪胎、煞車、機油與行李固定。"],
@@ -123,24 +132,52 @@ const THURSDAY_DAYS = [
     nav: [["花蓮市 → 七星潭", "花蓮市", "七星潭風景區"], ["七星潭 → 花蓮市", "七星潭風景區", "花蓮市"]],
     alternative: "若前段行程延誤，直接使用本日補回進度；若蘇花預報不佳，保留續住花蓮或調整返程方式的彈性。"
   },
-  { ...TRIP_DAYS[5], day: 6, date: "9/22（二）" },
-  { ...TRIP_DAYS[6], day: 7, date: "9/23（三）" }
+  { ...TRIP_DAYS[5], day: 6, date: "9/21（一）" },
+  { ...TRIP_DAYS[6], day: 7, date: "9/22（二）" }
 ];
 
-const SOUTH_LINK_DAYS = TRIP_DAYS.map(day => ({ ...day }));
-SOUTH_LINK_DAYS[2] = {
-  day: 3, date: "9/13（日）", short: "枋寮", title: "台南 → 枋寮", distance: "150–190 km", ride: "4–5 小時", stay: "枋寮", pace: "08:00 出發 · 16:00 前入住",
-  risk: "南迴前一晚", notice: "確認南橫不開放後不要前往寶來，改沿西南部平地南下；入住前加滿油並確認南迴路況。",
+const CENTRAL_CROSS_DAYS = SEPTEMBER_DAYS.map(day => ({ ...day }));
+CENTRAL_CROSS_DAYS[5] = {
+  day: 6, date: "9/21（一）", short: "埔里", title: "花蓮 → 中橫 → 埔里", distance: "150–190 km", ride: "6–8 小時", stay: "埔里", pace: "05:30 查路況 · 依管制時段出發",
+  risk: "高山管制", notice: "台 8 線太魯閣至大禹嶺須確認全線開放、施工放行與淨空時間；豪雨、落石、地震或道路未全線開放時，不進入中橫並切回蘇花方案。",
   stops: [
-    ["台南", "早餐後確認台 9 線南迴與東部天氣。"],
-    ["高雄外圍", "避開快速道路與市中心壅塞路段。"],
+    ["花蓮市", "清晨確認台 8 線、公路局公告、油量與高山保暖裝備。"],
+    ["太魯閣口", "只在確認可全線通行後進入；不得以導航建議取代現場管制。"],
+    ["天祥", "依放行時間短休，確認後續道路與剩餘油量。"],
+    ["大禹嶺", "高海拔路段注意低溫、濃霧與落石，不久留。"],
+    ["合歡山／清境", "視天候短停；疲勞或起霧時直接下山。"],
+    ["埔里", "天黑前入住，檢查煞車、輪胎與傳動。"]
+  ],
+  nav: [["花蓮 → 太魯閣", "花蓮市", "太魯閣國家公園遊客中心"], ["太魯閣 → 天祥", "太魯閣國家公園遊客中心", "天祥"], ["天祥 → 大禹嶺", "天祥", "大禹嶺"], ["大禹嶺 → 埔里", "大禹嶺", "埔里鎮"]],
+  alternative: "台 8 線未全線開放、天候不穩或錯過放行時段時，維持原蘇花方案前往羅東；不要改走未確認的林道或產業道路。"
+};
+CENTRAL_CROSS_DAYS[6] = {
+  day: 7, date: "9/22（二）", short: "竹東", title: "埔里 → 台 3 線 → 竹東", distance: "170–210 km", ride: "5–7 小時", stay: "回家", pace: "07:00 出發 · 17:00 前返抵",
+  risk: "返程疲勞", notice: "經國姓、東勢、卓蘭與三灣北返，避開快速道路；山路與市區交替，至少每 60–90 分鐘休息。",
+  stops: [
+    ["埔里", "早餐後確認胎壓、油量與午後天氣。"],
+    ["國姓", "沿台 14 線接台 21 線，短休補水。"],
+    ["東勢／卓蘭", "午餐與加油，確認後段體力。"],
+    ["三灣", "返家前最後休息，避開傍晚疲勞騎乘。"],
+    ["新竹縣竹東鎮", "傍晚前返抵，完成車輛巡檢。"]
+  ],
+  nav: [["埔里 → 國姓", "埔里鎮", "國姓鄉"], ["國姓 → 東勢", "國姓鄉", "東勢客家文化園區"], ["東勢 → 卓蘭", "東勢客家文化園區", "卓蘭鎮"], ["卓蘭 → 三灣", "卓蘭鎮", "三灣老街"], ["三灣 → 竹東", "三灣老街", "新竹縣竹東鎮"]]
+};
+
+const SOUTH_LINK_DAYS = SEPTEMBER_DAYS.map(day => ({ ...day }));
+SOUTH_LINK_DAYS[2] = {
+  day: 3, date: "9/18（五）", short: "枋寮", title: "旗山 → 東港 → 枋寮", distance: "140–180 km", ride: "4–5 小時", stay: "枋寮", pace: "08:00 出發 · 16:00 前入住",
+  risk: "南迴前一晚", notice: "確認南橫不開放後不要進入台 20 線山區，改沿高雄外圍南下；入住前加滿油並確認隔日南迴路況。",
+  stops: [
+    ["旗山", "早餐後確認台 9 線南迴與東部天氣。"],
+    ["高雄外圍", "經美濃、屏東方向南下，避開快速道路與市中心壅塞。"],
     ["東港／林邊", "安排午餐與休息，不繞進墾丁。"],
     ["枋寮", "加滿油、補充飲水，提早入住休息。"]
   ],
-  nav: [["台南 → 東港", "台南孔廟", "東港華僑市場"], ["東港 → 枋寮", "東港華僑市場", "枋寮車站"]]
+  nav: [["旗山 → 屏東", "旗山老街", "屏東車站"], ["屏東 → 東港", "屏東車站", "東港華僑市場"], ["東港 → 枋寮", "東港華僑市場", "枋寮車站"]]
 };
 SOUTH_LINK_DAYS[3] = {
-  day: 4, date: "9/14（一）", short: "台東", title: "枋寮 → 南迴 → 台東", distance: "110–140 km", ride: "3–4 小時", stay: "台東市", pace: "07:00 查路況 · 07:30 出發",
+  day: 4, date: "9/19（六）", short: "台東", title: "枋寮 → 南迴 → 台東", distance: "110–140 km", ride: "3–4 小時", stay: "台東市", pace: "07:00 查路況 · 07:30 出發",
   risk: "替代山路", notice: "走台 9 線南迴，不繞墾丁。南迴仍可能因豪雨、落石或事故管制，當日須再次確認官方路況。",
   stops: [
     ["枋寮", "清晨確認南迴路況、油量與雨具。"],
@@ -151,6 +188,7 @@ SOUTH_LINK_DAYS[3] = {
   nav: [["枋寮 → 大武", "枋寮車站", "大武車站"], ["大武 → 台東", "大武車站", "台東市"]],
   alternative: "若南迴也因豪雨或災害封閉，不尋找產業道路繞行；留在安全城鎮、調整住宿或整趟改期。"
 };
+SOUTH_LINK_DAYS[4] = { ...TRIP_DAYS[4], day: 5, date: "9/20（日）" };
 
 const PLAN_DETAILS = {
   main: {
@@ -161,29 +199,38 @@ const PLAN_DETAILS = {
     days: TRIP_DAYS
   },
   southLink: {
-    label: "南迴備案",
-    summary: "南橫不開放時，D3 改住枋寮，D4 經台 9 線南迴前往台東。",
-    overview: "建議 2026/9/11（五）出發、9/17（四）返抵。南橫不開放時改走南迴，蘇花仍安排週三；全程依當日路況調整。",
-    dateRange: "9/11–9/17",
+    label: "南橫不通替代",
+    summary: "南橫不開放時，D3 從旗山改住枋寮，D4 經台 9 線南迴到台東，D5 再前往花蓮。",
+    overview: "2026/9/16（三）從竹東出發、9/22（二）返抵。南橫不通時由旗山南下枋寮，隔日走台 9 線南迴到台東；取消花蓮休息日，後段仍經蘇花、羅東返回竹東。",
+    dateRange: "9/16–9/22",
     days: SOUTH_LINK_DAYS
   },
-  thursday: {
-    label: "週四精簡版",
-    summary: "9/17 週四出發（農曆八月初七），取消台南住宿；D2 嘉義直達寶來，D5 留在花蓮作為機動／休息日。",
-    overview: "建議 2026/9/17（四）出發、9/23（三）返抵，已避開農曆七月。取消台南住宿，嘉義直達寶來；花蓮保留一天機動與休息。全程約 1,020–1,240 公里。",
-    dateRange: "9/17–9/23",
-    days: THURSDAY_DAYS
+  september: {
+    label: "9/16 指定行程",
+    summary: "9/16 從竹東出發，經嘉義、旗山、台東與花蓮；花蓮連住兩晚後由羅東中繼返家。",
+    overview: "2026/9/16（三）從竹東出發、9/22（二）返抵。依序住宿嘉義、旗山、台東、花蓮兩晚與羅東；南橫、蘇花仍須依當日公告調整。全程約 1,000–1,250 公里。",
+    dateRange: "9/16–9/22",
+    days: SEPTEMBER_DAYS
+  },
+  centralCross: {
+    label: "中橫返程",
+    summary: "D1–D5 不變；D6 從花蓮經中橫、合歡山到埔里，D7 沿台 3 線系統返回竹東。",
+    overview: "2026/9/16（三）從竹東出發、9/22（二）返抵。D1–D5 維持嘉義、旗山、台東與花蓮行程；後段可在蘇花／羅東與中橫／埔里之間選擇。中橫僅限台 8 線確認全線開放時採用。",
+    dateRange: "9/16–9/22",
+    days: CENTRAL_CROSS_DAYS
   }
 };
 
 const LODGING_GUIDES = {
   "嘉義": { area: "嘉義車站至文化路夜市一帶", reason: "餐飲選擇多，抵達後可步行用餐；隔天南下也容易離開市區。", query: "嘉義車站 旅館" },
+  "旗山": { area: "旗山老街外圍／延平一路一帶", reason: "晚餐與補給方便，隔天可直接往甲仙與南橫；優先選擇有遮雨機車位的旅宿。", query: "旗山老街 住宿" },
   "台南": { area: "中西區／台南車站西側", reason: "靠近老城與餐飲，隔天可順接台 20 線；避免住進巷弄太深、停車不便的區域。", query: "台南中西區 旅館" },
   "寶來": { area: "寶來溫泉街與台 20 線沿線", reason: "距梅山口較近，隔天可配合放行時段；旅宿少，應優先確認晚到與機車停放。", query: "寶來溫泉 住宿" },
   "枋寮": { area: "枋寮車站／中山路周邊", reason: "晚餐、加油與補給方便，隔天可直接銜接台 9 線南迴。", query: "枋寮車站 住宿" },
   "台東": { area: "鐵花村／正氣路市區", reason: "餐飲與補給集中，隔天走台 11 線北上方便；若重視安靜可改找台東車站周邊。", query: "台東鐵花村 旅館" },
   "花蓮": { area: "花蓮市中心／東大門夜市外圍", reason: "晚餐方便，隔天往新城與蘇花方向順路；避開夜市正旁邊可能較吵的房間。", query: "花蓮市中心 旅館" },
-  "羅東": { area: "羅東車站至羅東夜市之間", reason: "步行可用餐，隔天前往北宜公路方便；週末需提早預訂。", query: "羅東車站 旅館" }
+  "羅東": { area: "羅東車站至羅東夜市之間", reason: "步行可用餐，隔天前往北宜公路方便；週末需提早預訂。", query: "羅東車站 旅館" },
+  "埔里": { area: "埔里市區／南興街周邊", reason: "中橫下山後餐飲、加油與維修較集中，隔天往國姓方向也方便。", query: "埔里市區 住宿" }
 };
 
 const LODGING_REQUIREMENTS = ["每晚 NT$1,000–2,000", "可免費取消", "獨立衛浴"];
@@ -195,6 +242,12 @@ const FOOD_GUIDES = {
     { name: "火雞肉飯", place: "嘉義市", note: "抵達嘉義後的經典選擇，可搭配涼菜與湯。", query: "嘉義市 火雞肉飯" },
     { name: "砂鍋魚頭", place: "文化路夜市周邊", note: "適合多人分食；單人可改找小份沙鍋菜。", query: "嘉義 砂鍋魚頭" },
     { name: "嘉義豆花", place: "文化路夜市周邊", note: "晚餐後簡單收尾，選步行可到的店即可。", query: "嘉義文化路夜市 豆花" }
+  ],
+  "旗山": [
+    { name: "大埔砂鍋魚頭", place: "大埔", note: "走台 3 線時可作午餐，控制份量並預留山路騎乘時間。", query: "大埔 砂鍋魚頭" },
+    { name: "玉井芒果冰", place: "玉井", note: "短暫降溫補給，依季節與店家供應為準。", query: "玉井 芒果冰" },
+    { name: "旗山香蕉蛋糕", place: "旗山老街", note: "適合外帶作為隔日補給，不必排隊久候。", query: "旗山 香蕉蛋糕" },
+    { name: "旗山老街小吃", place: "旗山", note: "入住後步行用餐，避免再騎車增加疲勞。", query: "旗山老街 小吃" }
   ],
   "台南": [
     { name: "嘉義涼麵", place: "嘉義市", note: "麻醬加美乃滋是嘉義特色，適合出發前簡單吃。", query: "嘉義 涼麵" },
@@ -231,7 +284,7 @@ const FOOD_GUIDES = {
     { name: "台東米苔目", place: "台東市", note: "中午後抵達，可避開正餐尖峰再進市區。", query: "台東市 米苔目" },
     { name: "卑南豬血湯", place: "台東市", note: "抵達後想吃熱食可選，與米苔目擇一。", query: "台東市 卑南豬血湯" }
   ],
-  "thursday:day5": [
+  "september:day5": [
     { name: "花蓮扁食", place: "花蓮市", note: "休息日可選步行可達的店，不必再騎車追名店。", query: "花蓮市 扁食" },
     { name: "公正包子", place: "花蓮市", note: "適合作為簡單補給，現場人多時改選附近店家。", query: "花蓮 公正包子" },
     { name: "剝皮辣椒料理", place: "花蓮市", note: "正餐可選在地風味，熱門店先確認候位狀況。", query: "花蓮 剝皮辣椒 餐廳" },
@@ -251,6 +304,19 @@ const FOOD_GUIDES = {
     { name: "卜肉與糕渣", place: "羅東夜市", note: "油炸類適量分食，隔日仍有長距離返程。", query: "羅東夜市 卜肉 糕渣" },
     { name: "包心粉圓", place: "羅東夜市", note: "夜市甜點選項，與其他甜食擇一即可。", query: "羅東夜市 包心粉圓" }
   ],
+  "埔里": [
+    { name: "埔里米粉", place: "埔里市區", note: "中橫下山後補充熱量，優先選住宿附近店家。", query: "埔里 米粉" },
+    { name: "南投意麵", place: "埔里市區", note: "晚餐可選的簡單熱食，不再騎車追店。", query: "埔里 意麵" },
+    { name: "埔里甘蔗筍", place: "埔里", note: "依季節與店家供應品嘗在地食材。", query: "埔里 甘蔗筍 料理" },
+    { name: "紹興料理", place: "埔里", note: "含酒料理須留意酒精殘留，騎車時應避免飲酒。", query: "埔里 紹興料理" }
+  ],
+  "centralCross:竹東": [
+    { name: "客家封肉", place: "國姓", note: "返程前段的正餐選項，控制份量避免飯後疲倦。", query: "國姓 客家料理" },
+    { name: "東勢粄條", place: "東勢", note: "台 3 線沿途補給，優先選擇方便停車的店家。", query: "東勢 粄條" },
+    { name: "卓蘭水果", place: "卓蘭", note: "依產季少量補充，不為採買增加行李負擔。", query: "卓蘭 水果" },
+    { name: "三灣麵食", place: "三灣", note: "返抵竹東前最後補給，避免停留到天色過晚。", query: "三灣 麵店" },
+    { name: "客家粄條", place: "竹東", note: "返家後再吃，不為趕餐廳壓縮途中休息。", query: "竹東 客家粄條" }
+  ],
   "竹東": [
     { name: "三星蔥餅", place: "羅東", note: "返程前可簡單補給，避開排隊過長的店。", query: "羅東 三星蔥餅" },
     { name: "茶葉料理", place: "坪林", note: "北宜中段休息兼午餐，避免吃得過飽。", query: "坪林 茶葉料理" },
@@ -268,7 +334,7 @@ const CHECKLIST_GROUPS = [
 ];
 
 const EXPENSE_CATEGORIES = ["住宿", "油資", "餐飲", "景點／停車", "維修", "其他"];
-const EXPENSE_DAYS = ["DAY 1 · 9/11", "DAY 2 · 9/12", "DAY 3 · 9/13", "DAY 4 · 9/14", "DAY 5 · 9/15", "DAY 6 · 9/16", "DAY 7 · 9/17"];
+const EXPENSE_DAYS = ["DAY 1 · 9/16", "DAY 2 · 9/17", "DAY 3 · 9/18", "DAY 4 · 9/19", "DAY 5 · 9/20", "DAY 6 · 9/21", "DAY 7 · 9/22"];
 const OFFICIAL_LINKS = [
   ["省道即時路況", "幸福公路", "https://168.thb.gov.tw/"],
   ["公路局公告", "施工與災阻消息", "https://www.thb.gov.tw/"],
@@ -276,7 +342,7 @@ const OFFICIAL_LINKS = [
   ["NCDR 災害示警", "整合即時示警", "https://alerts.ncdr.nat.gov.tw/"]
 ];
 
-const defaultState = { currentDay: 1, currentPlan: "main", checks: {}, budget: {}, expenses: [], updatedAt: new Date().toISOString() };
+const defaultState = { currentDay: 1, currentPlan: "september", checks: {}, budget: {}, expenses: [], updatedAt: new Date().toISOString() };
 let state = loadState();
 let installPrompt = null;
 
@@ -321,7 +387,7 @@ function normalizeImportedState(data) {
   return {
     ...defaultState,
     currentDay: currentDay >= 1 && currentDay <= EXPENSE_DAYS.length ? currentDay : 1,
-    currentPlan: Object.hasOwn(PLAN_DETAILS, imported.currentPlan) ? imported.currentPlan : "main",
+    currentPlan: Object.hasOwn(PLAN_DETAILS, imported.currentPlan) ? imported.currentPlan : "september",
     checks,
     expenses
   };
@@ -364,11 +430,12 @@ function renderPlanSelector() {
   document.getElementById("overviewDateRange").textContent = plan.dateRange;
   const mapDetails = {
     main: ["routeMainMap", "南橫主線：竹東、嘉義、台南、寶來、台東、花蓮、羅東、竹東，各段附里程", "從竹東沿西部南下，經寶來與南橫到台東，再沿東岸北返"],
-    southLink: ["routeSouthLinkMap", "南迴備案：竹東、嘉義、台南、枋寮、台東、花蓮、羅東、竹東，各段附里程", "從竹東沿西部南下，經枋寮與台九線南迴到台東，再沿東岸北返"],
-    thursday: ["routeThursdayMap", "週四精簡版：竹東、嘉義、寶來、台東、花蓮、羅東、竹東，各段附里程", "從竹東經嘉義直達寶來，穿越南橫到台東，並在花蓮保留一個機動日後北返"]
+    southLink: ["routeSouthLinkMap", "南橫不通替代：竹東、嘉義、旗山、枋寮、台東、花蓮、羅東、竹東，各段附里程", "從竹東經嘉義與旗山到枋寮，沿台九線南迴到台東，再沿東岸北返"],
+    september: ["routeSeptemberMap", "9/16 指定行程：竹東、嘉義、旗山、台東、花蓮、羅東、竹東，各段附里程", "從竹東經嘉義與旗山進入南橫到台東，並在花蓮保留一個機動日後北返"],
+    centralCross: ["routeCentralCrossMap", "中橫返程：竹東、嘉義、旗山、台東、花蓮、埔里、竹東，各段附里程", "前五天維持原行程，第六天從花蓮經中橫與合歡山到埔里，第七天沿台三線系統返回竹東"]
   };
   const [activeMap, ariaLabel, description] = mapDetails[state.currentPlan] || mapDetails.main;
-  ["routeMainMap", "routeSouthLinkMap", "routeThursdayMap"].forEach(id => {
+  ["routeMainMap", "routeSouthLinkMap", "routeSeptemberMap", "routeCentralCrossMap"].forEach(id => {
     document.getElementById(id).toggleAttribute("hidden", id !== activeMap);
   });
   document.getElementById("routeVisual").setAttribute("aria-label", ariaLabel);
@@ -619,7 +686,7 @@ document.getElementById("resetExpenses").addEventListener("click", () => {
   renderExpenses();
 });
 document.getElementById("exportData").addEventListener("click", () => {
-  const backup = JSON.stringify({ app: "taiwan-moto-trip", version: 1, exportedAt: new Date().toISOString(), state }, null, 2);
+  const backup = JSON.stringify({ app: "zhudong-trip-2026-09-16", version: 1, exportedAt: new Date().toISOString(), state }, null, 2);
   const url = URL.createObjectURL(new Blob([backup], { type: "application/json" }));
   const link = document.createElement("a");
   link.href = url;

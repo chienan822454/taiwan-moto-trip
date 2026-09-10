@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#174c43">
-  <meta name="description" content="新竹縣竹東鎮出發，七天六夜逆時針白牌機車環島行程、清單與預算工具。">
-  <title>環島七日｜竹東逆時針機車計畫</title>
+  <meta name="description" content="2026/9/16 從竹東出發，經嘉義、旗山、台東、花蓮與羅東的七日白牌機車旅遊規劃。">
+  <title>竹東出發七日旅遊｜2026/9/16–9/22</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/icons/app-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -14,8 +14,8 @@
   <a class="skip-link" href="#mainContent">跳到主要內容</a>
   <header class="app-header">
     <div>
-      <p class="eyebrow">ZHUDONG · 7 DAYS · COUNTERCLOCKWISE</p>
-      <h1>環島七日</h1>
+      <p class="eyebrow">ZHUDONG · SEP 16–22 · 7 DAYS</p>
+      <h1>竹東出發七日旅遊</h1>
     </div>
     <div class="header-actions">
       <span class="status" id="networkStatus" aria-live="polite">連線中</span>
@@ -30,14 +30,14 @@
       <div class="overview-copy">
         <p class="section-kicker">白牌機車 · 7 天 6 夜</p>
         <h2 id="overviewTitle">竹東出發，沿西岸南下，再從東岸回家。</h2>
-        <p id="overviewDescription">建議 2026/9/11（五）出發、9/17（四）返抵。南橫安排週一，但仍須依當日公告決定是否通行；蘇花安排週三。全程約 1,100–1,310 公里。</p>
+        <p id="overviewDescription">2026/9/16（三）從竹東出發、9/22（二）返抵。依序住宿嘉義、旗山、台東、花蓮兩晚與羅東；南橫、蘇花仍須依當日公告調整。</p>
         <div class="summary-row" aria-label="旅程摘要">
           <span><b>6</b> 晚住宿</span>
           <span><b>5–7</b> 小時／日</span>
-          <span><b id="overviewDateRange">9/11–9/17</b> 建議日期</span>
+          <span><b id="overviewDateRange">9/16–9/22</b> 旅遊日期</span>
         </div>
       </div>
-      <div class="route-visual" id="routeVisual" aria-label="南橫主線：竹東、嘉義、台南、寶來、台東、花蓮、羅東、竹東">
+      <div class="route-visual" id="routeVisual" aria-label="9/16 指定行程：竹東、嘉義、旗山、台東、花蓮、羅東、竹東">
         <svg viewBox="0 0 420 560" role="img" aria-labelledby="routeTitle routeDesc">
           <title id="routeTitle">台灣逆時針環島路線示意</title>
           <desc id="routeDesc">從新竹縣竹東鎮沿西部南下，經南橫到台東，再沿東岸北返。</desc>
@@ -47,7 +47,7 @@
             </marker>
           </defs>
           <path class="island" d="M100 328.8L115.6 343.3 113.4 345.2 124.9 378.2 124.4 388.6 134.6 399.1 128.4 399 145.1 407.2 166.8 428.8 174.4 475.4 177.5 477.2 180.4 472.2 191.1 480 195.2 462.7 194.3 426.1 203.6 397.1 225.7 370.8 233.8 355.1 251.5 325.2 257.4 300 272.9 219.5 277.4 213.3 274.1 203.6 279 197.3 279.4 189.4 291.1 175.5 294.2 159.5 301 153.5 298.4 149.6 302.5 146.8 303.6 138.5 298.7 131.1 297.1 108 304 95.8 317 86.4 308.8 83.7 307.8 71.5 296.6 72.5 291.4 68.1 287.8 71.4 289 68.2 281.8 64.3 283.4 60.5 280.1 62.3 274.3 52.9 265.2 50 244.2 67.7 232.7 72.6 210.4 84.5 197.3 107.1 195.5 119.8 175.7 137.7 156.3 175.6 149.7 176.4 155.2 177.8 149.4 186.3 147.6 193.3 143.4 194.3 137.6 202.3 132.5 215.6 127.9 230.1 123.9 231.7 126.3 235.7 114.9 238.7 114.1 244.8 114.2 291 109.1 297.4 105.6 310.4Z"/>
-          <g id="routeMainMap">
+          <g id="routeMainMap" hidden>
             <g class="route-lines">
               <path data-day="1" d="M216.2 121.2L146.1 279.9"/>
               <path data-day="2" d="M146.1 279.9L116.5 341.8"/>
@@ -78,56 +78,83 @@
           <g id="routeSouthLinkMap" hidden>
             <g class="route-lines">
               <path data-day="1" d="M216.2 121.2L146.1 279.9"/>
-              <path data-day="2" d="M146.1 279.9L116.5 341.8"/>
-              <path data-day="3" d="M116.5 341.8L161.5 420.7"/>
+              <path data-day="2" d="M146.1 279.9L151.5 348.5"/>
+              <path data-day="3" d="M151.5 348.5L161.5 420.7"/>
               <path data-day="4" d="M161.5 420.7L222.2 371.5"/>
               <path data-day="5" d="M222.2 371.5L272.9 216.5"/>
               <path data-day="6" d="M272.9 216.5L290.5 128.7"/>
               <path data-day="7" d="M290.5 128.7L216.2 121.2"/>
             </g>
             <g class="route-points">
-              <circle cx="216.2" cy="121.2" r="7"/><circle cx="146.1" cy="279.9" r="6"/><circle cx="116.5" cy="341.8" r="6"/>
+              <circle cx="216.2" cy="121.2" r="7"/><circle cx="146.1" cy="279.9" r="6"/><circle cx="151.5" cy="348.5" r="6"/>
               <circle cx="161.5" cy="420.7" r="6"/><circle cx="222.2" cy="371.5" r="7"/><circle cx="272.9" cy="216.5" r="6"/><circle cx="290.5" cy="128.7" r="6"/>
             </g>
             <g class="route-labels">
               <path d="M211 117L193 106"/><text x="159" y="106">竹東</text>
               <path d="M142 279L124 274"/><text x="88" y="278">嘉義</text>
-              <path d="M112 342L94 346"/><text x="58" y="350">台南</text>
+              <path d="M148 351L130 359"/><text x="94" y="364">旗山</text>
               <path d="M157 421L137 425"/><text x="99" y="429">枋寮</text>
               <path d="M226 375L238 387"/><text x="240" y="392">台東</text>
               <path d="M277 217L292 217"/><text x="295" y="221">花蓮</text>
               <path d="M295 129L305 129"/><text x="308" y="133">羅東</text>
             </g>
             <g class="route-mileages">
-              <text x="153" y="193">230–260 km</text><text x="76" y="315">80–120</text><text x="116" y="386">150–190</text>
+              <text x="153" y="193">230–260 km</text><text x="105" y="323">110–140</text><text x="132" y="390">140–180</text>
               <text x="180" y="414">110–140</text><text x="258" y="301">180–200</text><text x="286" y="174">130–160</text><text x="246" y="112">170–200</text>
             </g>
           </g>
-          <g id="routeThursdayMap" hidden>
+          <g id="routeSeptemberMap">
             <g class="route-lines">
               <path data-day="1" d="M216.2 121.2L146.1 279.9"/>
-              <path data-day="2" d="M146.1 279.9L174.9 326.6"/>
-              <path data-day="3" d="M174.9 326.6L222.2 371.5"/>
+              <path data-day="2" d="M146.1 279.9L151.5 348.5"/>
+              <path data-day="3" d="M151.5 348.5L222.2 371.5"/>
               <path data-day="4" d="M222.2 371.5L272.9 216.5"/>
               <path data-day="5" d="M272.9 216.5C292 202 295 230 272.9 216.5"/>
               <path data-day="6" d="M272.9 216.5L290.5 128.7"/>
               <path data-day="7" d="M290.5 128.7L216.2 121.2"/>
             </g>
             <g class="route-points">
-              <circle cx="216.2" cy="121.2" r="7"/><circle cx="146.1" cy="279.9" r="6"/><circle cx="174.9" cy="326.6" r="6"/>
+              <circle cx="216.2" cy="121.2" r="7"/><circle cx="146.1" cy="279.9" r="6"/><circle cx="151.5" cy="348.5" r="6"/>
               <circle cx="222.2" cy="371.5" r="7"/><circle cx="272.9" cy="216.5" r="6"/><circle cx="290.5" cy="128.7" r="6"/>
             </g>
             <g class="route-labels">
               <path d="M211 117L193 106"/><text x="159" y="106">竹東</text>
               <path d="M142 279L124 274"/><text x="88" y="278">嘉義</text>
-              <path d="M178 323L189 312"/><text x="190" y="315">寶來</text>
+              <path d="M148 351L130 359"/><text x="94" y="364">旗山</text>
               <path d="M226 375L238 387"/><text x="240" y="392">台東</text>
               <path d="M277 217L292 217"/><text x="295" y="221">花蓮</text>
               <path d="M295 129L305 129"/><text x="308" y="133">羅東</text>
             </g>
             <g class="route-mileages">
-              <text x="153" y="193">230–260 km</text><text x="142" y="305">約 101</text><text x="185" y="354">180–220</text>
+              <text x="153" y="193">230–260 km</text><text x="105" y="323">110–140</text><text x="174" y="367">200–230</text>
               <text x="258" y="301">180–200</text><text x="294" y="242">0–60</text><text x="286" y="174">130–160</text><text x="246" y="112">170–200</text>
+            </g>
+          </g>
+          <g id="routeCentralCrossMap" hidden>
+            <g class="route-lines">
+              <path data-day="1" d="M216.2 121.2L146.1 279.9"/>
+              <path data-day="2" d="M146.1 279.9L151.5 348.5"/>
+              <path data-day="3" d="M151.5 348.5L222.2 371.5"/>
+              <path data-day="4" d="M222.2 371.5L272.9 216.5"/>
+              <path data-day="5" d="M272.9 216.5C292 202 295 230 272.9 216.5"/>
+              <path data-day="6" d="M272.9 216.5L178 229"/>
+              <path data-day="7" d="M178 229L216.2 121.2"/>
+            </g>
+            <g class="route-points">
+              <circle cx="216.2" cy="121.2" r="7"/><circle cx="146.1" cy="279.9" r="6"/><circle cx="151.5" cy="348.5" r="6"/>
+              <circle cx="222.2" cy="371.5" r="7"/><circle cx="272.9" cy="216.5" r="6"/><circle cx="178" cy="229" r="6"/>
+            </g>
+            <g class="route-labels">
+              <path d="M211 117L193 106"/><text x="159" y="106">竹東</text>
+              <path d="M142 279L124 274"/><text x="88" y="278">嘉義</text>
+              <path d="M148 351L130 359"/><text x="94" y="364">旗山</text>
+              <path d="M226 375L238 387"/><text x="240" y="392">台東</text>
+              <path d="M277 217L292 217"/><text x="295" y="221">花蓮</text>
+              <path d="M174 229L156 222"/><text x="123" y="222">埔里</text>
+            </g>
+            <g class="route-mileages">
+              <text x="153" y="193">230–260 km</text><text x="105" y="323">110–140</text><text x="174" y="367">200–230</text>
+              <text x="258" y="301">180–200</text><text x="294" y="242">0–60</text><text x="210" y="210">150–190</text><text x="182" y="166">170–210</text>
             </g>
           </g>
           <g class="route-status-legend" aria-label="路線狀態圖例">
@@ -141,15 +168,15 @@
 
     <section class="plan-selector" id="planSelector" aria-labelledby="planSelectorTitle">
       <div>
-        <p class="section-kicker">路線應變</p>
-        <h2 id="planSelectorTitle">選擇七日行程方案</h2>
+        <p class="section-kicker">本次行程</p>
+        <h2 id="planSelectorTitle">9/16–9/22 七日方案</h2>
       </div>
-      <div class="plan-toggle" role="group" aria-label="選擇環島方案">
-        <button type="button" class="active" data-plan="main" aria-pressed="true">南橫主線</button>
-        <button type="button" data-plan="southLink" aria-pressed="false">南迴備案</button>
-        <button type="button" data-plan="thursday" aria-pressed="false">週四精簡版</button>
+      <div class="plan-toggle" role="group" aria-label="選擇路線方案">
+        <button type="button" class="active" data-plan="september" aria-pressed="true">蘇花返程</button>
+        <button type="button" data-plan="southLink" aria-pressed="false">南橫不通替代</button>
+        <button type="button" data-plan="centralCross" aria-pressed="false">中橫返程</button>
       </div>
-      <p id="planSummary">D3 住寶來，D4 依放行時段穿越南橫前往台東。</p>
+      <p id="planSummary">9/16 從竹東出發，經嘉義、旗山、台東與花蓮；花蓮連住兩晚後由羅東中繼返家。</p>
     </section>
 
     <nav class="day-tabs" id="dayTabs" aria-label="選擇行程天數"></nav>

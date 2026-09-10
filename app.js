@@ -119,19 +119,19 @@ const SEPTEMBER_DAYS = [
     nav: [["旗山 → 甲仙", "旗山老街", "甲仙區"], ["甲仙 → 梅蘭", "甲仙區", "梅蘭加油站"], ["梅蘭 → 池上", "梅蘭加油站", "池上車站"], ["池上 → 台東", "池上車站", "台東市"]],
     alternative: "南橫封閉時不要等待或闖行；改由旗山往枋寮住宿，隔日經台 9 線南迴至台東，並取消或縮短花蓮休息日。"
   },
-  { ...TRIP_DAYS[4], day: 4, date: "9/19（六）" },
   {
-    day: 5, date: "9/20（日）", short: "花蓮", title: "花蓮機動／休息日", distance: "0–60 km", ride: "0–2 小時", stay: "花蓮市", pace: "不設鬧鐘 · 依體力與天候安排",
-    risk: "恢復日", notice: "優先休息、洗衣與檢查車況；若前段受天候或管制延誤，本日作為緩衝，不為補景點再次拉長里程。",
+    day: 4, date: "9/19（六）", short: "台東", title: "台東機動／休息日", distance: "0–70 km", ride: "0–2 小時", stay: "台東市", pace: "不設鬧鐘 · 依體力與天候安排",
+    risk: "恢復日", notice: "南橫長途後優先補眠、洗衣與檢查車況；想出門時只排市區或近郊短程，保留隔日台 11 線體力。",
     stops: [
-      ["花蓮市", "睡眠、洗衣並檢查輪胎、煞車、機油與行李固定。"],
-      ["七星潭／新城", "體力與天氣都適合才安排短程，不進入蘇花關鍵路段。"],
-      ["市區補給", "補齊返程用品，下午確認隔日蘇花路況與住宿。"],
-      ["花蓮市", "連住同一處，提早休息，不搬運行李。"]
+      ["台東市", "睡眠、洗衣並檢查輪胎、煞車、機油與行李固定。"],
+      ["森林公園／海濱公園", "體力與天氣適合才安排市區短程。"],
+      ["卑南／知本", "近郊擇一，不為景點拉長里程。"],
+      ["台東市", "連住同一處，補齊東海岸所需用品並提早休息。"]
     ],
-    nav: [["花蓮市 → 七星潭", "花蓮市", "七星潭風景區"], ["七星潭 → 花蓮市", "七星潭風景區", "花蓮市"]],
-    alternative: "若前段行程延誤，直接使用本日補回進度；若蘇花預報不佳，保留續住花蓮或調整返程方式的彈性。"
+    nav: [["台東市 → 森林公園", "台東市", "台東森林公園"], ["森林公園 → 台東市", "台東森林公園", "台東市"]],
+    alternative: "若前段行程延誤，直接使用本日補回進度；若隔日東海岸天候不佳，減少停點並提早前往花蓮。"
   },
+  { ...TRIP_DAYS[4], day: 5, date: "9/20（日）" },
   { ...TRIP_DAYS[5], day: 6, date: "9/21（一）" },
   { ...TRIP_DAYS[6], day: 7, date: "9/22（二）" }
 ];
@@ -207,15 +207,15 @@ const PLAN_DETAILS = {
   },
   september: {
     label: "9/16 指定行程",
-    summary: "9/16 從竹東出發，經嘉義、旗山、台東與花蓮；花蓮連住兩晚後由羅東中繼返家。",
-    overview: "2026/9/16（三）從竹東出發、9/22（二）返抵。依序住宿嘉義、旗山、台東、花蓮兩晚與羅東；南橫、蘇花仍須依當日公告調整。全程約 1,000–1,250 公里。",
+    summary: "9/16 從竹東出發；台東連住兩晚，9/20 前往花蓮住一晚，再由羅東中繼返家。",
+    overview: "2026/9/16（三）從竹東出發、9/22（二）返抵。依序住宿嘉義、旗山、台東兩晚、花蓮與羅東；南橫、蘇花仍須依當日公告調整。全程約 1,000–1,250 公里。",
     dateRange: "9/16–9/22",
     days: SEPTEMBER_DAYS
   },
   centralCross: {
     label: "中橫返程",
-    summary: "D1–D5 不變；D6 從花蓮經中橫、合歡山到埔里，D7 沿台 3 線系統返回竹東。",
-    overview: "2026/9/16（三）從竹東出發、9/22（二）返抵。D1–D5 維持嘉義、旗山、台東與花蓮行程；後段可在蘇花／羅東與中橫／埔里之間選擇。中橫僅限台 8 線確認全線開放時採用。",
+    summary: "台東連住兩晚、花蓮一晚；D6 從花蓮經中橫、合歡山到埔里，D7 沿台 3 線系統返回竹東。",
+    overview: "2026/9/16（三）從竹東出發、9/22（二）返抵。依序住宿嘉義、旗山、台東兩晚與花蓮；D6 可由中橫到埔里，D7 返回竹東。中橫僅限台 8 線確認全線開放時採用。",
     dateRange: "9/16–9/22",
     days: CENTRAL_CROSS_DAYS
   }
@@ -247,7 +247,8 @@ const FOOD_GUIDES = {
     { name: "大埔砂鍋魚頭", place: "大埔", note: "走台 3 線時可作午餐，控制份量並預留山路騎乘時間。", query: "大埔 砂鍋魚頭" },
     { name: "玉井芒果冰", place: "玉井", note: "短暫降溫補給，依季節與店家供應為準。", query: "玉井 芒果冰" },
     { name: "旗山香蕉蛋糕", place: "旗山老街", note: "適合外帶作為隔日補給，不必排隊久候。", query: "旗山 香蕉蛋糕" },
-    { name: "旗山老街小吃", place: "旗山", note: "入住後步行用餐，避免再騎車增加疲勞。", query: "旗山老街 小吃" }
+    { name: "旗山老街小吃", place: "旗山", note: "入住後步行用餐，避免再騎車增加疲勞。", query: "旗山老街 小吃" },
+    { name: "枝仔冰", place: "旗山", note: "適合抵達後消暑，依營業時間就近選擇。", query: "旗山 枝仔冰" }
   ],
   "台南": [
     { name: "嘉義涼麵", place: "嘉義市", note: "麻醬加美乃滋是嘉義特色，適合出發前簡單吃。", query: "嘉義 涼麵" },
@@ -284,11 +285,12 @@ const FOOD_GUIDES = {
     { name: "台東米苔目", place: "台東市", note: "中午後抵達，可避開正餐尖峰再進市區。", query: "台東市 米苔目" },
     { name: "卑南豬血湯", place: "台東市", note: "抵達後想吃熱食可選，與米苔目擇一。", query: "台東市 卑南豬血湯" }
   ],
-  "september:day5": [
-    { name: "花蓮扁食", place: "花蓮市", note: "休息日可選步行可達的店，不必再騎車追名店。", query: "花蓮市 扁食" },
-    { name: "公正包子", place: "花蓮市", note: "適合作為簡單補給，現場人多時改選附近店家。", query: "花蓮 公正包子" },
-    { name: "剝皮辣椒料理", place: "花蓮市", note: "正餐可選在地風味，熱門店先確認候位狀況。", query: "花蓮 剝皮辣椒 餐廳" },
-    { name: "東大門夜市", place: "花蓮市", note: "依體力散步用餐，油炸與生食適量即可。", query: "花蓮東大門夜市" }
+  "台東": [
+    { name: "台東米苔目", place: "台東市", note: "休息日可避開尖峰時間，選住宿附近店家。", query: "台東市 米苔目" },
+    { name: "卑南豬血湯", place: "台東市", note: "市區熱湯選擇，適合搭配簡單午餐。", query: "台東市 卑南豬血湯" },
+    { name: "原住民風味料理", place: "台東市", note: "晚餐可選在地食材，不必騎車追遠處名店。", query: "台東市 原住民風味料理" },
+    { name: "釋迦冰", place: "台東市", note: "依季節與店家供應，少量作為午後補給。", query: "台東 釋迦冰" },
+    { name: "地瓜酥", place: "台東市", note: "可外帶作為隔日東海岸騎乘的小份補給。", query: "台東 地瓜酥" }
   ],
   "花蓮": [
     { name: "都蘭包子", place: "都蘭", note: "離開台東後的早段補給，方便帶著走。", query: "都蘭 包子" },
@@ -308,7 +310,8 @@ const FOOD_GUIDES = {
     { name: "埔里米粉", place: "埔里市區", note: "中橫下山後補充熱量，優先選住宿附近店家。", query: "埔里 米粉" },
     { name: "南投意麵", place: "埔里市區", note: "晚餐可選的簡單熱食，不再騎車追店。", query: "埔里 意麵" },
     { name: "埔里甘蔗筍", place: "埔里", note: "依季節與店家供應品嘗在地食材。", query: "埔里 甘蔗筍 料理" },
-    { name: "紹興料理", place: "埔里", note: "含酒料理須留意酒精殘留，騎車時應避免飲酒。", query: "埔里 紹興料理" }
+    { name: "紹興料理", place: "埔里", note: "含酒料理須留意酒精殘留，騎車時應避免飲酒。", query: "埔里 紹興料理" },
+    { name: "鹹油條", place: "埔里市區", note: "隔日出發前可作早餐，優先選順路且好停車的店。", query: "埔里 鹹油條" }
   ],
   "centralCross:竹東": [
     { name: "客家封肉", place: "國姓", note: "返程前段的正餐選項，控制份量避免飯後疲倦。", query: "國姓 客家料理" },
@@ -323,6 +326,61 @@ const FOOD_GUIDES = {
     { name: "茶粿", place: "坪林", note: "方便外帶的小份點心，可留到休息時食用。", query: "坪林 茶粿" },
     { name: "仙草", place: "關西", note: "接近終點前的最後補給，之後續走台 3 線返家。", query: "關西 仙草" },
     { name: "客家粄條", place: "竹東", note: "返家後再吃也可以，不為趕餐廳壓縮休息。", query: "竹東 客家粄條" }
+  ]
+};
+
+const SAVED_SPOTS = {
+  day2: [
+    { type: "美食", name: "鴨米脆皮薯條", area: "台南國華街", note: "台南加碼選項；往旗山前需評估繞行時間。", query: "台南國華街 鴨米脆皮薯條" },
+    { type: "美食", name: "金得春捲", area: "台南國華街", note: "台南加碼選項；熱門時段可能排隊。", query: "台南 金得春捲" },
+    { type: "美食", name: "炸雞洋行", area: "台南國華街", note: "台南加碼選項；不為排隊延誤旗山入住。", query: "台南國華街 炸雞洋行" },
+    { type: "景點", name: "美濃湖", address: "高雄市美濃區民權路與泰安路交叉口附近", query: "美濃湖" },
+    { type: "美食", name: "美濃林家粄條", address: "高雄市美濃區美興街25號", hours: "09:00–21:00", query: "美濃林家粄條" },
+    { type: "景點", name: "旗山老街", address: "高雄市旗山區中山路", hours: "14:00–20:00", query: "旗山老街" },
+    { type: "美食", name: "月亮香蕉冰紅茶", address: "高雄市旗山區中山路49號", hours: "週一至週五 10:00–19:00；週六、週日 09:00–20:00", query: "月亮香蕉冰紅茶" },
+    { type: "美食", name: "吳記肉丸", address: "高雄市旗山區永平街20號", hours: "09:30–18:00", query: "旗山 吳記肉丸" },
+    { type: "景點", name: "旗山孔子廟", address: "高雄市旗山區鼓山公園1號", hours: "09:00–17:00（週一公休）", query: "旗山孔子廟" },
+    { type: "景點", name: "旗山地景橋", address: "高雄市旗山區中華路上（旗山麥當勞對面）", query: "旗山地景橋" }
+  ],
+  day3: [
+    { type: "美食", name: "好煎炸春捲", area: "池上火車站附近", query: "池上 好煎炸春捲" },
+    { type: "景點", name: "池上大坡池", area: "池上", query: "池上大坡池" },
+    { type: "景點", name: "天堂路", address: "台東縣池上鄉萬新道路", query: "池上 天堂路" },
+    { type: "美食", name: "關山臭豆腐", address: "台東縣關山鎮和平路87-5號", hours: "09:00–15:00（週二、週三公休）", query: "關山臭豆腐 和平路87-5號" },
+    { type: "美食", name: "老饕麵館", address: "台東縣關山鎮民族路55號", hours: "11:00–14:00、16:30–19:45（週三公休）", query: "關山 老饕麵館" }
+  ],
+  "southLink:day3": [],
+  day4: [
+    { type: "景點", name: "山里車站", area: "台東縣卑南鄉", query: "山里車站" },
+    { type: "景點", name: "武陵綠色隧道", area: "台東縣鹿野鄉", query: "武陵綠色隧道" },
+    { type: "美食", name: "阿咪米苔目", address: "台東縣台東市福建路78號", hours: "07:30–15:00、17:00–20:30（週六公休）", query: "阿咪米苔目 台東" },
+    { type: "景點", name: "池上大坡池／天堂路", area: "池上", note: "往返台東市里程較長，休息日依體力擇一。", query: "池上 天堂路 大坡池" },
+    { type: "美食", name: "關山臭豆腐／老饕麵館", area: "關山", note: "與池上行程同向，可依店休日擇一。", query: "關山 美食" }
+  ],
+  "southLink:day4": [
+    { type: "美食", name: "阿咪米苔目", address: "台東縣台東市福建路78號", hours: "07:30–15:00、17:00–20:30（週六公休）", query: "阿咪米苔目 台東" },
+    { type: "景點", name: "山里車站", area: "台東縣卑南鄉", note: "抵達時間與體力足夠再前往。", query: "山里車站" }
+  ],
+  day5: [
+    { type: "景點", name: "三仙台", area: "台東縣成功鎮", query: "三仙台" },
+    { type: "美食", name: "成功豆花", area: "台東縣成功鎮", query: "成功豆花" },
+    { type: "景點", name: "比西里海岸部落", area: "台東縣成功鎮", query: "比西里岸部落" },
+    { type: "景點", name: "石門麻糬洞", area: "花蓮縣豐濱鄉", query: "石門麻糬洞" },
+    { type: "景點", name: "石梯坪", area: "花蓮縣豐濱鄉", query: "石梯坪" },
+    { type: "美食", name: "常紅蛋糕", area: "花蓮縣壽豐鄉壽豐車站附近", query: "壽豐 常紅蛋糕" }
+  ],
+  "september:day6": [
+    { type: "景點", name: "九曲洞", area: "花蓮縣秀林鄉太魯閣", note: "須以太魯閣園區及道路開放公告為準。", query: "太魯閣 九曲洞" },
+    { type: "景點", name: "清水地熱公園", address: "宜蘭縣大同鄉三星路八段501巷150號", hours: "09:30–16:00", note: "離蘇花主線有繞行距離，需預留時間。", query: "清水地熱公園" },
+    { type: "美食", name: "三星阿婆蔥油餅", address: "宜蘭縣三星鄉天福村三星路七段318號", hours: "週二公休", query: "三星阿婆蔥油餅" }
+  ],
+  "southLink:day6": [
+    { type: "景點", name: "九曲洞", area: "花蓮縣秀林鄉太魯閣", note: "須以太魯閣園區及道路開放公告為準。", query: "太魯閣 九曲洞" },
+    { type: "景點", name: "清水地熱公園", address: "宜蘭縣大同鄉三星路八段501巷150號", hours: "09:30–16:00", note: "離蘇花主線有繞行距離，需預留時間。", query: "清水地熱公園" },
+    { type: "美食", name: "三星阿婆蔥油餅", address: "宜蘭縣三星鄉天福村三星路七段318號", hours: "週二公休", query: "三星阿婆蔥油餅" }
+  ],
+  "centralCross:day6": [
+    { type: "景點", name: "九曲洞", area: "花蓮縣秀林鄉太魯閣", note: "中橫全線與步道皆確認開放時才安排。", query: "太魯閣 九曲洞" }
   ]
 };
 
@@ -341,6 +399,17 @@ const OFFICIAL_LINKS = [
   ["氣象署", "天氣、豪雨與颱風", "https://www.cwa.gov.tw/"],
   ["NCDR 災害示警", "整合即時示警", "https://alerts.ncdr.nat.gov.tw/"]
 ];
+
+const WEATHER_LOCATIONS = {
+  "竹東": { latitude: 24.74, longitude: 121.09 },
+  "嘉義": { latitude: 23.48, longitude: 120.45 },
+  "旗山": { latitude: 22.89, longitude: 120.48 },
+  "枋寮": { latitude: 22.37, longitude: 120.59 },
+  "台東": { latitude: 22.76, longitude: 121.15 },
+  "花蓮": { latitude: 23.99, longitude: 121.61 },
+  "羅東": { latitude: 24.68, longitude: 121.77 },
+  "埔里": { latitude: 23.97, longitude: 120.97 }
+};
 
 const defaultState = { currentDay: 1, currentPlan: "september", checks: {}, budget: {}, expenses: [], updatedAt: new Date().toISOString() };
 let state = loadState();
@@ -500,6 +569,27 @@ function renderItinerary() {
         </a>`).join("")}
     </div>
     <p class="fine-print">店家營業日、候位與品項可能變動；以順路、好停車、不久候為優先。</p>` : "";
+  const savedSpotsKey = `${state.currentPlan}:day${day.day}`;
+  const savedSpots = Object.hasOwn(SAVED_SPOTS, savedSpotsKey) ? SAVED_SPOTS[savedSpotsKey] : (SAVED_SPOTS[`day${day.day}`] || []);
+  const savedSpotsSection = document.getElementById("savedSpotsSection");
+  savedSpotsSection.hidden = savedSpots.length === 0;
+  document.getElementById("savedSpotsLink").hidden = savedSpots.length === 0;
+  savedSpotsSection.innerHTML = savedSpots.length ? `
+    <div class="section-heading">
+      <div><p class="section-kicker">指定收藏</p><h3>想去的店家與景點</h3></div>
+    </div>
+    <div class="saved-spots-list">
+      ${savedSpots.map(spot => `
+        <a class="saved-spot external-link" href="${mapsSearchUrl(spot.query)}" target="_blank" rel="noopener">
+          <div class="saved-spot-heading"><span>${spot.type}</span><strong>${spot.name}</strong></div>
+          ${spot.address ? `<p><b>地址</b>${spot.address}</p>` : ""}
+          ${spot.area ? `<p><b>區域</b>${spot.area}</p>` : ""}
+          ${spot.hours ? `<p><b>營業時間</b>${spot.hours}</p>` : ""}
+          ${spot.note ? `<small>${spot.note}</small>` : ""}
+          <i aria-hidden="true">↗</i>
+        </a>`).join("")}
+    </div>
+    <p class="fine-print">地址與營業時間依提供資料整理，出發前請再向店家或景點確認；同日項目不代表全部都要安排。</p>` : "";
   const lodging = LODGING_GUIDES[day.short];
   const lodgingSection = document.getElementById("lodgingSection");
   lodgingSection.hidden = !lodging;
@@ -526,6 +616,7 @@ function renderItinerary() {
   renderPlanSelector();
   renderTabs();
   updateNetworkStatus();
+  loadWeather();
 }
 
 function renderChecklist() {
@@ -620,6 +711,94 @@ function renderOfficialLinks() {
     <a class="official-link external-link" href="${url}" target="_blank" rel="noopener">
       <div><span>${title}</span><small>${detail} · 需連線</small></div><b aria-hidden="true">↗</b>
     </a>`).join("");
+}
+
+function weatherDescription(code) {
+  if (code === 0) return "晴朗";
+  if ([1, 2].includes(code)) return "晴時多雲";
+  if (code === 3) return "陰天";
+  if ([45, 48].includes(code)) return "有霧";
+  if ([51, 53, 55, 56, 57].includes(code)) return "毛毛雨";
+  if ([61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return "有雨";
+  if ([71, 73, 75, 77, 85, 86].includes(code)) return "降雪";
+  if ([95, 96, 99].includes(code)) return "雷雨";
+  return "天氣不明";
+}
+
+function weatherDateLabel(isoDate) {
+  const [, month, day] = isoDate.split("-");
+  return `${Number(month)}/${Number(day)}`;
+}
+
+function activeWeatherLocations() {
+  return activePlan().days.slice(state.currentDay - 1, state.currentDay + 1).map(day => {
+    const coordinates = WEATHER_LOCATIONS[day.short];
+    const [month, date] = day.date.split("（")[0].split("/");
+    return coordinates ? {
+      ...coordinates,
+      name: day.short,
+      tripDate: `2026-${month.padStart(2, "0")}-${date.padStart(2, "0")}`,
+      day: day.day
+    } : null;
+  }).filter(Boolean);
+}
+
+async function fetchLocationWeather(location) {
+  const params = new URLSearchParams({
+    latitude: String(location.latitude),
+    longitude: String(location.longitude),
+    current: "temperature_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m",
+    daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max",
+    timezone: "Asia/Taipei",
+    forecast_days: "16"
+  });
+  const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
+  if (!response.ok) throw new Error(`weather-${response.status}`);
+  return { location, data: await response.json() };
+}
+
+function weatherCardMarkup({ location, data }) {
+  const forecastIndex = data.daily?.time?.indexOf(location.tripDate) ?? -1;
+  const current = data.current || {};
+  const forecastAvailable = forecastIndex >= 0;
+  const forecast = forecastAvailable ? {
+    code: data.daily.weather_code[forecastIndex],
+    high: Math.round(data.daily.temperature_2m_max[forecastIndex]),
+    low: Math.round(data.daily.temperature_2m_min[forecastIndex]),
+    rain: data.daily.precipitation_probability_max[forecastIndex]
+  } : null;
+  return `
+    <article class="weather-card">
+      <header><div><h4>${location.name}</h4><small>DAY ${location.day} · ${weatherDateLabel(location.tripDate)}</small></div><span>${weatherDescription(current.weather_code)}</span></header>
+      <div class="weather-current"><strong>${Math.round(current.temperature_2m)}°</strong><span>體感 ${Math.round(current.apparent_temperature)}°</span></div>
+      <dl>
+        <div><dt>目前降雨</dt><dd>${Number(current.precipitation).toFixed(1)} mm</dd></div>
+        <div><dt>目前風速</dt><dd>${Math.round(current.wind_speed_10m)} km/h</dd></div>
+      </dl>
+      ${forecast ? `<p class="weather-forecast"><b>${weatherDateLabel(location.tripDate)} ${weatherDescription(forecast.code)}</b><span>${forecast.low}–${forecast.high}° · 降雨 ${forecast.rain ?? "--"}%</span></p>` : `<p class="weather-forecast unavailable">尚未進入 ${weatherDateLabel(location.tripDate)} 預報範圍</p>`}
+    </article>`;
+}
+
+async function loadWeather() {
+  const status = document.getElementById("weatherStatus");
+  const grid = document.getElementById("weatherGrid");
+  const button = document.getElementById("refreshWeather");
+  const locations = activeWeatherLocations();
+  button.disabled = true;
+  status.textContent = `正在取得 DAY ${locations.map(location => location.day).join("、")} 天氣…`;
+  try {
+    const results = await Promise.allSettled(locations.map(fetchLocationWeather));
+    const weather = results.filter(result => result.status === "fulfilled").map(result => result.value);
+    if (!weather.length) throw new Error("weather-unavailable");
+    grid.innerHTML = weather.map(weatherCardMarkup).join("");
+    const failed = results.length - weather.length;
+    status.textContent = `更新時間：${new Date().toLocaleString("zh-TW", { dateStyle: "short", timeStyle: "short" })}${failed ? ` · ${failed} 個地點暫時無法取得` : ""}`;
+  } catch {
+    grid.innerHTML = `<p class="weather-error">目前無法取得天氣資料，請確認網路連線，或使用下方氣象署連結。</p>`;
+    status.textContent = "天氣更新失敗";
+  } finally {
+    button.disabled = false;
+  }
 }
 
 function showView(target) {
@@ -727,6 +906,7 @@ document.getElementById("installButton").addEventListener("click", async () => {
   installPrompt = null;
   document.getElementById("installButton").hidden = true;
 });
+document.getElementById("refreshWeather").addEventListener("click", loadWeather);
 
 renderItinerary();
 renderChecklist();

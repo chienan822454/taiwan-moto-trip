@@ -30,7 +30,7 @@
       <div class="overview-copy">
         <p class="section-kicker">白牌機車 · 7 天 6 夜</p>
         <h2 id="overviewTitle">竹東出發，沿西岸南下，再從東岸回家。</h2>
-        <p id="overviewDescription">2026/9/16（三）從竹東出發、9/22（二）返抵。依序住宿嘉義、旗山、台東、花蓮兩晚與羅東；南橫、蘇花仍須依當日公告調整。</p>
+        <p id="overviewDescription">2026/9/16（三）從竹東出發、9/22（二）返抵。依序住宿嘉義、旗山、台東兩晚、花蓮與羅東；南橫、蘇花仍須依當日公告調整。</p>
         <div class="summary-row" aria-label="旅程摘要">
           <span><b>6</b> 晚住宿</span>
           <span><b>5–7</b> 小時／日</span>
@@ -108,8 +108,8 @@
               <path data-day="1" d="M216.2 121.2L146.1 279.9"/>
               <path data-day="2" d="M146.1 279.9L151.5 348.5"/>
               <path data-day="3" d="M151.5 348.5L222.2 371.5"/>
-              <path data-day="4" d="M222.2 371.5L272.9 216.5"/>
-              <path data-day="5" d="M272.9 216.5C292 202 295 230 272.9 216.5"/>
+              <path data-day="4" d="M222.2 371.5C242 358 245 385 222.2 371.5"/>
+              <path data-day="5" d="M222.2 371.5L272.9 216.5"/>
               <path data-day="6" d="M272.9 216.5L290.5 128.7"/>
               <path data-day="7" d="M290.5 128.7L216.2 121.2"/>
             </g>
@@ -127,7 +127,7 @@
             </g>
             <g class="route-mileages">
               <text x="153" y="193">230–260 km</text><text x="105" y="323">110–140</text><text x="174" y="367">200–230</text>
-              <text x="258" y="301">180–200</text><text x="294" y="242">0–60</text><text x="286" y="174">130–160</text><text x="246" y="112">170–200</text>
+              <text x="235" y="397">0–70</text><text x="258" y="301">180–200</text><text x="286" y="174">130–160</text><text x="246" y="112">170–200</text>
             </g>
           </g>
           <g id="routeCentralCrossMap" hidden>
@@ -135,8 +135,8 @@
               <path data-day="1" d="M216.2 121.2L146.1 279.9"/>
               <path data-day="2" d="M146.1 279.9L151.5 348.5"/>
               <path data-day="3" d="M151.5 348.5L222.2 371.5"/>
-              <path data-day="4" d="M222.2 371.5L272.9 216.5"/>
-              <path data-day="5" d="M272.9 216.5C292 202 295 230 272.9 216.5"/>
+              <path data-day="4" d="M222.2 371.5C242 358 245 385 222.2 371.5"/>
+              <path data-day="5" d="M222.2 371.5L272.9 216.5"/>
               <path data-day="6" d="M272.9 216.5L178 229"/>
               <path data-day="7" d="M178 229L216.2 121.2"/>
             </g>
@@ -154,7 +154,7 @@
             </g>
             <g class="route-mileages">
               <text x="153" y="193">230–260 km</text><text x="105" y="323">110–140</text><text x="174" y="367">200–230</text>
-              <text x="258" y="301">180–200</text><text x="294" y="242">0–60</text><text x="210" y="210">150–190</text><text x="182" y="166">170–210</text>
+              <text x="235" y="397">0–70</text><text x="258" y="301">180–200</text><text x="210" y="210">150–190</text><text x="182" y="166">170–210</text>
             </g>
           </g>
           <g class="route-status-legend" aria-label="路線狀態圖例">
@@ -176,7 +176,7 @@
         <button type="button" data-plan="southLink" aria-pressed="false">南橫不通替代</button>
         <button type="button" data-plan="centralCross" aria-pressed="false">中橫返程</button>
       </div>
-      <p id="planSummary">9/16 從竹東出發，經嘉義、旗山、台東與花蓮；花蓮連住兩晚後由羅東中繼返家。</p>
+      <p id="planSummary">9/16 從竹東出發；台東連住兩晚，9/20 前往花蓮住一晚，再由羅東中繼返家。</p>
     </section>
 
     <nav class="day-tabs" id="dayTabs" aria-label="選擇行程天數"></nav>
@@ -193,9 +193,19 @@
       <div class="notice" id="dayNotice"></div>
       <aside class="fuel-alert" id="fuelAlert" aria-label="最後加油站" hidden></aside>
       <section class="alternative" id="alternativeRoute" hidden></section>
+      <section class="weather-section" aria-labelledby="weatherTitle">
+        <div class="section-heading weather-heading">
+          <div><p class="section-kicker">即時資訊</p><h3 id="weatherTitle">本日與隔天天氣</h3></div>
+          <button class="weather-refresh" id="refreshWeather" type="button">重新整理</button>
+        </div>
+        <p class="weather-status" id="weatherStatus" role="status" aria-live="polite">正在取得天氣資料…</p>
+        <div class="weather-grid" id="weatherGrid" aria-live="polite"></div>
+        <p class="fine-print">資料來源：Open-Meteo。山區天氣變化快速，南橫、中橫與蘇花仍以氣象署警特報及公路局現場管制為準。</p>
+      </section>
       <nav class="day-section-nav" aria-label="跳至本日內容">
         <a href="#routePlanSection">今日路線</a>
         <a href="#navigationSection">分段導航</a>
+        <a id="savedSpotsLink" href="#savedSpotsSection">指定收藏</a>
         <a href="#dailyExpenseSection">本日記帳</a>
       </nav>
       <section class="timeline-section" id="routePlanSection" aria-labelledby="timelineTitle">
@@ -216,6 +226,7 @@
       </section>
       <section class="lodging-section" id="lodgingSection" aria-label="推薦住宿" hidden></section>
       <section class="food-section" id="foodSection" aria-label="沿途美食" hidden></section>
+      <section class="saved-spots-section" id="savedSpotsSection" aria-label="指定收藏" hidden></section>
       <section class="daily-expense-section" id="dailyExpenseSection" aria-labelledby="dailyExpenseTitle">
         <div class="section-heading">
           <div><p class="section-kicker">當日支出</p><h3 id="dailyExpenseTitle">本日記帳</h3></div>
